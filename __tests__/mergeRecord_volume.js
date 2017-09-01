@@ -47,21 +47,16 @@ describe('mergeRecords volume', () => {
   })
 
 
-  // test('one author with 3 series and many editions', () => {
-  //   const author = Immutable.fromJS(authorObaJSON)
-  //   const seriesAuthor = author.get('tasks')
-  //     .map((task) => task.get('series'))
+  test('one author with 3 series and many editions', () => {
+    const author = Immutable.fromJS(authorObaJSON)
+    const editionsAuthor = author.get('tasks')
+      .map((task) => task.getIn(['series', 'editions']))
+      .flatten(true)
 
-  //   expect(
-  //     initialState.withMutations((collection) => {
-  //       seriesAuthor.forEach(
-  //         (serie) => {
-  //           mergeRecords(collection, VolumeRecord, serie.get('editions'), volumeForeignKeys, 'id', ['series_id', serie.get('id')])
-  //         }
-  //       )
-  //     })
-  //   ).toMatchSnapshot()
-  // })
+    expect(
+      mergeVolumeRecordsFromSeries(initialState, editionsAuthor)
+    ).toMatchSnapshot()
+  })
 
   // test('one serie then author of the serie but an edition is missing', () => {
   //   const serie = Immutable.fromJS(serieDeathNoteJSON)
