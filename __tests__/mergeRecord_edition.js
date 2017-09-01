@@ -1,5 +1,5 @@
 import Immutable from 'immutable'
-import { mergeRecords } from '../src/index'
+import { mergeRecords, mergeCompleteListsRecords } from '../src/index'
 
 import serieDeathNoteJSON from '../__fixtures__/serie_death_note.json'
 import serieFullmetalAlchemistJSON from '../__fixtures__/serie_fullmetal_alchemist.json'
@@ -68,13 +68,7 @@ describe('mergeRecords edition', () => {
       .removeIn([2, 'editions']) // remove death note editions, so it supposed to be deleted from store
 
     expect(
-      store.withMutations((collection) => {
-        seriesAuthor.forEach(
-          (serie) => {
-            mergeRecords(collection, EditionRecord, serie.get('editions'), editionForeignKeys, 'id', ['series_id', serie.get('id')])
-          }
-        )
-      })
+      mergeCompleteListsRecords(store, EditionRecord, seriesAuthor, 'editions', 'series_id', 'id', editionForeignKeys)
     ).toMatchSnapshot()
   })
 
