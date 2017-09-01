@@ -112,18 +112,22 @@ export const mergeRecords = (store, Record, listData, foreignKeys = [], primaryK
   let keysToRemove = null
   if(completeKeysPath) {
     const completeKeys = store.getIn(['relations', ...completeKeysPath])
-    const actuelKeys = listData.map((mapItem) => mapItem.get(primaryKey)).toSet()
+    if(completeKeys) {
+      const actuelKeys = listData ? listData.map((mapItem) => mapItem.get(primaryKey)).toSet() : Immutable.Set()
 
-    keysToRemove = completeKeys.subtract(actuelKeys)
+      keysToRemove = completeKeys.subtract(actuelKeys)
+    }
   }
 
   return store
     .withMutations((collection) => {
-      listData.forEach(
-        (mapItem) => {
-          updateRecord(collection, Record, mapItem, foreignKeys, primaryKey)
-        }
-      )
+      if(listData) {
+        listData.forEach(
+          (mapItem) => {
+            updateRecord(collection, Record, mapItem, foreignKeys, primaryKey)
+          }
+        )
+      }
 
       if(keysToRemove) {
         keysToRemove.forEach(
