@@ -19,3 +19,17 @@ export const EditionRecord = Immutable.Record({
   series_id: null,
 })
 export const editionForeignKeys = ['publisher_id', 'series_id']
+
+export const VolumeRecord = Immutable.Record({
+  id: null,
+  title: null,
+  number: null,
+  date_parution: null,
+  img: null,
+  isbn: null,
+  asin: null,
+  edition_id: null,
+  content: null,
+  nb_pages: null,
+})
+export const volumeForeignKeys = ['edition_id']
