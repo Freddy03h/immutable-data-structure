@@ -139,14 +139,27 @@ export const mergeRecords = (store, Record, listData, foreignKeys = [], primaryK
     })
 }
 
-export const mergeCompleteListsRecords = (store, Record, listData, keyData, relationKey, keyDataPrimary, foreignKeys = [], primaryKey = 'id') => {
+export const createMergeRecords = (Record, foreignKeys = [], primaryKey = 'id') => {
+  return (store, listData, completeKeysPath = null) => {
+    return mergeRecords(store, Record, listData, foreignKeys, primaryKey, completeKeysPath)
+  }
+}
+
+//////////
+
+export const mergeCompleteListsRecords = (mergeFunc, store, listData, entitiesKey, foreignKey, keyDataPrimary = 'id') => {
   return store
     .withMutations((collection) => {
       listData.forEach(
         (mapItem) => {
-          mergeRecords(collection, Record, mapItem.get(keyData), foreignKeys, primaryKey, [relationKey, mapItem.get(keyDataPrimary)])
+          mergeFunc(collection, mapItem.get(entitiesKey), [foreignKey, mapItem.get(keyDataPrimary)])
         }
       )
     })
 }
 
+export const createMergeCompleteListsRecords = (mergeFunc, entitiesKey, foreignKey, keyDataPrimary = 'id') => {
+  return (store, listData) => {
+    return mergeCompleteListsRecords(mergeFunc, store, listData, entitiesKey, foreignKey, keyDataPrimary)
+  }
+}

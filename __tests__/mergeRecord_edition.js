@@ -1,17 +1,20 @@
 import Immutable from 'immutable'
-import { mergeRecords, mergeCompleteListsRecords } from '../src/index'
+import { createMergeRecords, createMergeCompleteListsRecords } from '../src/index'
 
 import serieDeathNoteJSON from '../__fixtures__/serie_death_note.json'
 import serieFullmetalAlchemistJSON from '../__fixtures__/serie_fullmetal_alchemist.json'
 import authorObaJSON from '../__fixtures__/author_oba.json'
 import { initialState, EditionRecord, editionForeignKeys } from '../__fixtures__/records'
 
+const mergeEditionRecords = createMergeRecords(EditionRecord, editionForeignKeys)
+const mergeEditionRecordsFromSeries = createMergeCompleteListsRecords(mergeEditionRecords, 'editions', 'series_id')
+
 describe('mergeRecords edition', () => {
 
   test('one serie with two editions on empty store', () => {
     const serie = Immutable.fromJS(serieDeathNoteJSON)
     expect(
-      mergeRecords(initialState, EditionRecord, serie.get('editions'), editionForeignKeys)
+      mergeEditionRecords(initialState, serie.get('editions'))
     ).toMatchSnapshot()
   })
 
@@ -19,10 +22,10 @@ describe('mergeRecords edition', () => {
     const serieA = Immutable.fromJS(serieDeathNoteJSON)
     const serieB = Immutable.fromJS(serieFullmetalAlchemistJSON)
 
-    const store = mergeRecords(initialState, EditionRecord, serieA.get('editions'), editionForeignKeys)
+    const store = mergeEditionRecords(initialState, serieA.get('editions'))
 
     expect(
-      mergeRecords(store, EditionRecord, serieB.get('editions'), editionForeignKeys)
+      mergeEditionRecords(store, serieB.get('editions'))
     ).toMatchSnapshot()
   })
 
@@ -30,13 +33,13 @@ describe('mergeRecords edition', () => {
     const serieA = Immutable.fromJS(serieDeathNoteJSON)
     const serieB = Immutable.fromJS(serieFullmetalAlchemistJSON)
 
-    const store1 = mergeRecords(initialState, EditionRecord, serieA.get('editions'), editionForeignKeys)
-    const store2 = mergeRecords(store1, EditionRecord, serieB.get('editions'), editionForeignKeys)
+    const store1 = mergeEditionRecords(initialState, serieA.get('editions'))
+    const store2 = mergeEditionRecords(store1, serieB.get('editions'))
 
     const editionsSpliced = serieB.get('editions').splice(1)
 
     expect(
-      mergeRecords(store2, EditionRecord, editionsSpliced, editionForeignKeys, 'id', ['series_id', serieB.get('id')])
+      mergeEditionRecords(store2, editionsSpliced, ['series_id', serieB.get('id')])
     ).toMatchSnapshot()
   })
 
@@ -47,13 +50,7 @@ describe('mergeRecords edition', () => {
       .map((task) => task.get('series'))
 
     expect(
-      initialState.withMutations((collection) => {
-        seriesAuthor.forEach(
-          (serie) => {
-            mergeRecords(collection, EditionRecord, serie.get('editions'), editionForeignKeys, 'id', ['series_id', serie.get('id')])
-          }
-        )
-      })
+      mergeEditionRecordsFromSeries(initialState, seriesAuthor)
     ).toMatchSnapshot()
   })
 
@@ -61,14 +58,14 @@ describe('mergeRecords edition', () => {
     const serie = Immutable.fromJS(serieDeathNoteJSON)
     const author = Immutable.fromJS(authorObaJSON)
 
-    const store = mergeRecords(initialState, EditionRecord, serie.get('editions'), editionForeignKeys)
+    const store = mergeEditionRecords(initialState, serie.get('editions'))
 
     const seriesAuthor = author.get('tasks')
       .map((task) => task.get('series'))
       .removeIn([2, 'editions']) // remove death note editions, so it supposed to be deleted from store
 
     expect(
-      mergeCompleteListsRecords(store, EditionRecord, seriesAuthor, 'editions', 'series_id', 'id', editionForeignKeys)
+      mergeEditionRecordsFromSeries(store, seriesAuthor)
     ).toMatchSnapshot()
   })
 

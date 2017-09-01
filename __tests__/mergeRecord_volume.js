@@ -1,10 +1,13 @@
 import Immutable from 'immutable'
-import { mergeRecords, mergeCompleteListsRecords } from '../src/index'
+import { createMergeRecords, createMergeCompleteListsRecords } from '../src/index'
 
 import serieDeathNoteJSON from '../__fixtures__/serie_death_note.json'
 import serieFullmetalAlchemistJSON from '../__fixtures__/serie_fullmetal_alchemist.json'
 import authorObaJSON from '../__fixtures__/author_oba.json'
 import { initialState, VolumeRecord, volumeForeignKeys } from '../__fixtures__/records'
+
+const mergeVolumeRecords = createMergeRecords(VolumeRecord, volumeForeignKeys)
+const mergeVolumeRecordsFromSeries = createMergeCompleteListsRecords(mergeVolumeRecords, 'volumes', 'editions_id')
 
 describe('mergeRecords volume', () => {
 
@@ -12,7 +15,7 @@ describe('mergeRecords volume', () => {
     const serie = Immutable.fromJS(serieDeathNoteJSON)
 
     expect(
-      mergeCompleteListsRecords(initialState, VolumeRecord, serie.get('editions'), 'volumes', 'editions_id', 'id', volumeForeignKeys)
+      mergeVolumeRecordsFromSeries(initialState, serie.get('editions'))
     ).toMatchSnapshot()
   })
 
@@ -20,10 +23,10 @@ describe('mergeRecords volume', () => {
     const serieA = Immutable.fromJS(serieDeathNoteJSON)
     const serieB = Immutable.fromJS(serieFullmetalAlchemistJSON)
 
-    const store = mergeCompleteListsRecords(initialState, VolumeRecord, serieA.get('editions'), 'volumes', 'editions_id', 'id', volumeForeignKeys)
+    const store = mergeVolumeRecordsFromSeries(initialState, serieA.get('editions'))
 
     expect(
-      mergeCompleteListsRecords(store, VolumeRecord, serieB.get('editions'), 'volumes', 'editions_id', 'id', volumeForeignKeys)
+      mergeVolumeRecordsFromSeries(store, serieB.get('editions'))
     ).toMatchSnapshot()
   })
 
