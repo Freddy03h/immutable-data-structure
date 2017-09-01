@@ -7,7 +7,7 @@ import authorObaJSON from '../__fixtures__/author_oba.json'
 import { initialState, VolumeRecord, volumeForeignKeys } from '../__fixtures__/records'
 
 const mergeVolumeRecords = createMergeRecords(VolumeRecord, volumeForeignKeys)
-const mergeVolumeRecordsFromSeries = createMergeCompleteListsRecords(mergeVolumeRecords, 'volumes', 'editions_id')
+const mergeVolumeRecordsFromSeries = createMergeCompleteListsRecords(mergeVolumeRecords, 'volumes', 'edition_id')
 
 describe('mergeRecords volume', () => {
 
@@ -30,19 +30,21 @@ describe('mergeRecords volume', () => {
     ).toMatchSnapshot()
   })
 
-  // test('one serie loose an edition compare to store', () => {
-  //   const serieA = Immutable.fromJS(serieDeathNoteJSON)
-  //   const serieB = Immutable.fromJS(serieFullmetalAlchemistJSON)
+  test('one serie loose a volume in an edition compare to store', () => {
+    const serieA = Immutable.fromJS(serieDeathNoteJSON)
+    const serieB = Immutable.fromJS(serieFullmetalAlchemistJSON)
 
-  //   const store1 = mergeRecords(initialState, VolumeRecord, serieA.get('editions'), volumeForeignKeys)
-  //   const store2 = mergeRecords(store1, VolumeRecord, serieB.get('editions'), volumeForeignKeys)
+    const store1 = mergeVolumeRecordsFromSeries(initialState, serieA.get('editions'))
+    const store2 = mergeVolumeRecordsFromSeries(store1, serieB.get('editions'))
 
-  //   const editionsSpliced = serieB.get('editions').splice(1)
+    const editionsSpliced = serieB
+      .removeIn(['editions', 0, 'volumes', 0]) // remove a volume from an edition
+      .get('editions')
 
-  //   expect(
-  //     mergeRecords(store2, VolumeRecord, editionsSpliced, volumeForeignKeys, 'id', ['series_id', serieB.get('id')])
-  //   ).toMatchSnapshot()
-  // })
+    expect(
+      mergeVolumeRecordsFromSeries(store2, editionsSpliced)
+    ).toMatchSnapshot()
+  })
 
 
   // test('one author with 3 series and many editions', () => {
