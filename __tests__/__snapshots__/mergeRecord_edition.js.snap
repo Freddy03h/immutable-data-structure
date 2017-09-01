@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`updateRecord edition one serie loose an edition compare to store 1`] = `
+Immutable.Map {
+  data: Immutable.Map {
+    908612fd-1cc7-4780-aea4-63d3ac04c6bd: Object {
+      "id": "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+      "title": "Black Edition",
+    },
+    5482eba9-2773-40d8-82f7-1870b1b2a3e9: Object {
+      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+      "title": "Edition simple",
+    },
+    d42c9391-c92f-4485-a772-8df06d70ed17: Object {
+      "id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+      "publisher_id": "2f064f84-a653-48c1-b1f6-27a694bb7ec6",
+      "series_id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
+      "title": "Edition reliée",
+    },
+  },
+  relations: Immutable.Map {
+    publisher_id: Immutable.Map {
+      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.Set [
+        "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+        "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      ],
+      2f064f84-a653-48c1-b1f6-27a694bb7ec6: Immutable.Set [
+        "d42c9391-c92f-4485-a772-8df06d70ed17",
+      ],
+    },
+    series_id: Immutable.Map {
+      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.Set [
+        "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+        "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      ],
+      b9652346-95db-45ef-982b-de9f9d3ac01f: Immutable.Set [
+        "d42c9391-c92f-4485-a772-8df06d70ed17",
+      ],
+    },
+  },
+}
+`;
+
+exports[`updateRecord edition one serie with two editions on empty store 1`] = `
+Immutable.Map {
+  data: Immutable.Map {
+    908612fd-1cc7-4780-aea4-63d3ac04c6bd: Object {
+      "id": "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+      "title": "Black Edition",
+    },
+    5482eba9-2773-40d8-82f7-1870b1b2a3e9: Object {
+      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+      "title": "Edition simple",
+    },
+  },
+  relations: Immutable.Map {
+    publisher_id: Immutable.Map {
+      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.Set [
+        "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+        "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      ],
+    },
+    series_id: Immutable.Map {
+      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.Set [
+        "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+        "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      ],
+    },
+  },
+}
+`;
+
+exports[`updateRecord edition two series with two editions each on empty store 1`] = `
+Immutable.Map {
+  data: Immutable.Map {
+    908612fd-1cc7-4780-aea4-63d3ac04c6bd: Object {
+      "id": "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+      "title": "Black Edition",
+    },
+    5482eba9-2773-40d8-82f7-1870b1b2a3e9: Object {
+      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+      "title": "Edition simple",
+    },
+    d42c9391-c92f-4485-a772-8df06d70ed17: Object {
+      "id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+      "publisher_id": "2f064f84-a653-48c1-b1f6-27a694bb7ec6",
+      "series_id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
+      "title": "Edition reliée",
+    },
+    ffdf56ae-058d-49c6-80c6-336471a73dcc: Object {
+      "id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+      "publisher_id": "2f064f84-a653-48c1-b1f6-27a694bb7ec6",
+      "series_id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
+      "title": "Edition simple",
+    },
+  },
+  relations: Immutable.Map {
+    publisher_id: Immutable.Map {
+      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.Set [
+        "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+        "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      ],
+      2f064f84-a653-48c1-b1f6-27a694bb7ec6: Immutable.Set [
+        "d42c9391-c92f-4485-a772-8df06d70ed17",
+        "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+      ],
+    },
+    series_id: Immutable.Map {
+      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.Set [
+        "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+        "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      ],
+      b9652346-95db-45ef-982b-de9f9d3ac01f: Immutable.Set [
+        "d42c9391-c92f-4485-a772-8df06d70ed17",
+        "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+      ],
+    },
+  },
+}
+`;

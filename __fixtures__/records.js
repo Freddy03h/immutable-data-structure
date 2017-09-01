@@ -11,3 +11,11 @@ export const SerieRecord = Immutable.Record({
   type_id: null,
 })
 export const serieForeignKeys = ['type_id']
+
+export const EditionRecord = Immutable.Record({
+  id: null,
+  title: null,
+  publisher_id: null,
+  series_id: null,
+})
+export const editionForeignKeys = ['publisher_id', 'series_id']

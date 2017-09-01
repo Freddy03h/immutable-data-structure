@@ -108,7 +108,15 @@ export const deleteRecord = (store, id, foreignKeys = []) => {
     })
 }
 
-export const mergeRecords = (store, Record, listData, foreignKeys = [], primaryKey = 'id') => {
+export const mergeRecords = (store, Record, listData, foreignKeys = [], primaryKey = 'id', completeKeysPath = null) => {
+  let keysToRemove = null
+  if(completeKeysPath) {
+    const completeKeys = store.getIn(['relations', ...completeKeysPath])
+    const actuelKeys = listData.map((mapItem) => mapItem.get(primaryKey)).toSet()
+
+    keysToRemove = completeKeys.subtract(actuelKeys)
+  }
+
   return store
     .withMutations((collection) => {
       listData.forEach(
@@ -116,5 +124,13 @@ export const mergeRecords = (store, Record, listData, foreignKeys = [], primaryK
           updateRecord(collection, Record, mapItem, foreignKeys, primaryKey)
         }
       )
+
+      if(keysToRemove) {
+        keysToRemove.forEach(
+          (id) => {
+            deleteRecord(collection, id, foreignKeys)
+          }
+        )
+      }
     })
 }

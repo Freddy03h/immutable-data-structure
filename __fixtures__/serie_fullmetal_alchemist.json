@@ -1,0 +1,470 @@
+{
+  "id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
+  "title": "Fullmetal Alchemist",
+  "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+  "tasks": [
+    {
+      "id": "a2d8d8d1-ca0a-4ed9-938c-7d97b6ebc250",
+      "series_id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
+      "author_id": "b55f4917-ae44-4015-a0a5-d1d18de720cb",
+      "job_id": "dc7b6062-6aae-49ee-87a2-95d47ab52600",
+      "author": {
+        "id": "b55f4917-ae44-4015-a0a5-d1d18de720cb",
+        "name": "Arakawa",
+        "first_name": "Hiromu"
+      }
+    }
+  ],
+  "editions": [
+    {
+      "id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+      "title": "Edition reliée",
+      "series_id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
+      "publisher_id": "2f064f84-a653-48c1-b1f6-27a694bb7ec6",
+      "volumes": [
+        {
+          "id": "1fcc0860-bade-4c4c-9554-765af0f6c3a5",
+          "title": "TOME XIII (26-27)",
+          "number": 13,
+          "date_parution": "2015-09-10",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51maVan7OVL.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782368521298",
+          "asin": "2368521291"
+        },
+        {
+          "id": "0a914a8f-18fc-4103-9385-4b888714ec30",
+          "title": "TOME XII (24-25)",
+          "number": 12,
+          "date_parution": "2015-05-15",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51ZchWkPawL.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782368521281",
+          "asin": "2368521283"
+        },
+        {
+          "id": "0354b860-d994-4fb2-b649-ca8c494a26f6",
+          "title": "Tome XI (22-23)",
+          "number": 11,
+          "date_parution": "2014-12-11",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51VgR6QYSWL.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351429907",
+          "asin": "2351429907"
+        },
+        {
+          "id": "8dfb2e62-fa73-4570-9d8a-1647e7ee4e48",
+          "title": "Tome X (20-21)",
+          "number": 10,
+          "date_parution": "2014-08-28",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51yYF6FeaXL.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351429891",
+          "asin": "2351429893"
+        },
+        {
+          "id": "ab0808c6-83d3-4c23-b4f3-3d9375a94424",
+          "title": "Tome IX (18-19)",
+          "number": 9,
+          "date_parution": "2014-03-13",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51KTyJvBA3L.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351429884",
+          "asin": "2351429885"
+        },
+        {
+          "id": "79bee76a-01fd-4fd3-b3e2-690a969780b7",
+          "title": "Tome VIII (16-17)",
+          "number": 8,
+          "date_parution": "2013-12-12",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/5110gRxSqXL.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351428993",
+          "asin": "2351428994"
+        },
+        {
+          "id": "98739f45-b46a-41cb-822d-fc9953dc5fc1",
+          "title": "Tome VII (14-15)",
+          "number": 7,
+          "date_parution": "2013-09-12",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51HnB19v8xL.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351428986",
+          "asin": "2351428986"
+        },
+        {
+          "id": "6c507d7f-660b-41cb-b2c5-63d521a28a5c",
+          "title": "Tome VI (12-13)",
+          "number": 6,
+          "date_parution": "2013-06-13",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51F6C3joThL.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351428863",
+          "asin": "2351428862"
+        },
+        {
+          "id": "9ce1636f-8f64-4de9-a7c8-fc51de1892d8",
+          "title": "Tome V (10-11)",
+          "number": 5,
+          "date_parution": "2013-03-14",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/516OCcGCm9L.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351428740",
+          "asin": "2351428749"
+        },
+        {
+          "id": "f6e73e4f-1695-42e1-87a0-0cea8c66c935",
+          "title": "Tome IV (8-9)",
+          "number": 4,
+          "date_parution": "2012-12-13",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51VA-uGoFTL.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351428016",
+          "asin": "2351428013"
+        },
+        {
+          "id": "6aaa945f-074c-4a4f-9662-15e7a8d70a73",
+          "title": "Tome III (6-7)",
+          "number": 3,
+          "date_parution": "2012-09-13",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51oDm7wFRML.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351428009",
+          "asin": "2351428005"
+        },
+        {
+          "id": "b87423f2-71d7-4be4-8fdc-bc396708ee63",
+          "title": "Tome II (4-5)",
+          "number": 2,
+          "date_parution": "2012-03-08",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51CscZC9c-L.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351427521",
+          "asin": "2351427521"
+        },
+        {
+          "id": "8d5329c8-2ad5-4713-8961-84f2e42a61c6",
+          "title": "Tome I (1-2-3)",
+          "number": 1,
+          "date_parution": "2012-03-08",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51MOHY8mkuL.jpg",
+          "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+          "isbn": "9782351427552",
+          "asin": "2351427556"
+        }
+      ]
+    },
+    {
+      "id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+      "title": "Edition simple",
+      "series_id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
+      "publisher_id": "2f064f84-a653-48c1-b1f6-27a694bb7ec6",
+      "volumes": [
+        {
+          "id": "ae4cc5d7-d42d-41f6-80c1-8c6aa432d078",
+          "title": "Tome 27",
+          "number": 27,
+          "date_parution": "2011-07-07",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/5180gk8s3ML.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351426517",
+          "asin": "2351426517"
+        },
+        {
+          "id": "d73221df-c228-4d34-9c44-a599e861d27a",
+          "title": "Tome 26",
+          "number": 26,
+          "date_parution": "2011-04-14",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51XhvMFwHuL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351426319",
+          "asin": "2351426312"
+        },
+        {
+          "id": "ee7075c0-ff5a-44b0-a832-02a0c2d97151",
+          "title": "Tome 25",
+          "number": 25,
+          "date_parution": "2011-01-13",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51QJSQxrRHL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351425732",
+          "asin": "2351425731"
+        },
+        {
+          "id": "3ed9c57c-f69a-4898-99b1-27fd2bb4bb89",
+          "title": "Tome 24",
+          "number": 24,
+          "date_parution": "2010-09-09",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51MUDCoa2%2BL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351425497",
+          "asin": "2351425499"
+        },
+        {
+          "id": "031b0651-488e-4926-be9c-7a3ccfcc9af7",
+          "title": "Tome 23",
+          "number": 23,
+          "date_parution": "2010-04-08",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51nhgwjPE8L.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351425077",
+          "asin": "2351425073"
+        },
+        {
+          "id": "a88bec8c-f793-4b18-858a-843e4da8d97b",
+          "title": "Tome 22",
+          "number": 22,
+          "date_parution": "2009-11-11",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51gKyIdz4HL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351424483",
+          "asin": "2351424484"
+        },
+        {
+          "id": "b9a4ab06-bf43-47ca-950c-c973b6b18f87",
+          "title": "Tome 21",
+          "number": 21,
+          "date_parution": "2009-07-02",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51PDZv8zolL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351424285",
+          "asin": "235142428X"
+        },
+        {
+          "id": "9e207271-9b78-401b-88f1-50b3432ea0cd",
+          "title": "Tome 20",
+          "number": 20,
+          "date_parution": "2009-04-09",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51JbyQkx8mL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351424117",
+          "asin": "2351424115"
+        },
+        {
+          "id": "ebdca7a2-8f86-4c64-a30a-86cdfb71ba7e",
+          "title": "Tome 19",
+          "number": 19,
+          "date_parution": "2008-12-11",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51AJQx-WJTL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351423356",
+          "asin": "2351423356"
+        },
+        {
+          "id": "7407fb12-e182-400d-936e-0b807635c26e",
+          "title": "Tome 18",
+          "number": 18,
+          "date_parution": "2008-09-11",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51Yqa-BwdeL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351423257",
+          "asin": "2351423259"
+        },
+        {
+          "id": "b70e06ed-3004-4987-8974-d9270c623cb9",
+          "title": "Tome 17",
+          "number": 17,
+          "date_parution": "2008-05-15",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51U2mxsRMBL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351423189",
+          "asin": "2351423186"
+        },
+        {
+          "id": "aa321497-4302-4d2e-bee2-997cc67d915c",
+          "title": "Tome 16",
+          "number": 16,
+          "date_parution": "2008-03-13",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51ZPmK0lQ5L.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351422656",
+          "asin": "2351422651"
+        },
+        {
+          "id": "4b155570-e2bc-44e8-8f92-f66ac55e72b0",
+          "title": "Tome 15",
+          "number": 15,
+          "date_parution": "2007-11-08",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51o0y0uZgWL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351421598",
+          "asin": "2351421590"
+        },
+        {
+          "id": "6bc33a10-08e7-448c-9608-91ce041f411c",
+          "title": "Tome 14",
+          "number": 14,
+          "date_parution": "2007-09-13",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/5166lgh93xL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351421581",
+          "asin": "2351421582"
+        },
+        {
+          "id": "37b02128-ba53-448b-9cc7-14f0e7225d8b",
+          "title": "Tome 13",
+          "number": 13,
+          "date_parution": "2007-07-12",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51sGW14FPOL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351421574",
+          "asin": "2351421574"
+        },
+        {
+          "id": "9f016317-2b39-4daa-8f7a-d936616b2473",
+          "title": "Tome 12",
+          "number": 12,
+          "date_parution": "2007-05-10",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/516r%2BFE%2BHdL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351421567",
+          "asin": "2351421566"
+        },
+        {
+          "id": "87adf237-5a75-4389-9c5e-66a0aa17be9a",
+          "title": "Tome 11",
+          "number": 11,
+          "date_parution": "2007-03-08",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51pBQ9Fa7qL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351421512",
+          "asin": "2351421515"
+        },
+        {
+          "id": "29cac096-a063-41c2-82d0-7be9a957ca73",
+          "title": "Tome 10",
+          "number": 10,
+          "date_parution": "2007-01-11",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51%2BMB-tOfVL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351421475",
+          "asin": "2351421477"
+        },
+        {
+          "id": "58715dcb-ce62-4b8c-a6b0-6412310b12ff",
+          "title": "Tome 9",
+          "number": 9,
+          "date_parution": "2006-11-09",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51N7A347E8L.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351420492",
+          "asin": "2351420497"
+        },
+        {
+          "id": "5e336e2a-794f-43e3-b299-10eb2020fa73",
+          "title": "Tome 7",
+          "number": 7,
+          "date_parution": "2006-07-13",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51BNYNYRCHL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351420478",
+          "asin": "2351420470"
+        },
+        {
+          "id": "70f353f8-3374-43c1-a681-19dbf9fa3c2e",
+          "title": "Tome 6",
+          "number": 6,
+          "date_parution": "2006-05-11",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/518GTC3WXZL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351420461",
+          "asin": "2351420462"
+        },
+        {
+          "id": "0c34b2b6-15ac-4f36-bdb1-87cbebe87d53",
+          "title": "Tome 8",
+          "number": 8,
+          "date_parution": "2006-03-14",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/518dhvDM77L.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351420485",
+          "asin": "2351420489"
+        },
+        {
+          "id": "22549c4a-290c-4ad7-b73f-ca9b10aa41b0",
+          "title": "Tome 5",
+          "number": 5,
+          "date_parution": "2006-03-09",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51PHT8RQ3XL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351420454",
+          "asin": "2351420454"
+        },
+        {
+          "id": "d13f21d4-eee6-4b45-bb1c-ce1a8c746613",
+          "title": "Tome 4",
+          "number": 4,
+          "date_parution": "2006-01-12",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51Z7FVQZ7EL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351420416",
+          "asin": "2351420411"
+        },
+        {
+          "id": "97d6078e-b650-412a-981d-311859f62e50",
+          "title": "Tome 3",
+          "number": 3,
+          "date_parution": "2005-11-10",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/4170GPPT93L.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351420195",
+          "asin": "2351420195"
+        },
+        {
+          "id": "4b3ecb6e-a082-49dc-8c9e-848a54c3ccb3",
+          "title": "Tome 2",
+          "number": 2,
+          "date_parution": "2005-09-08",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51s8zCicyrL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351420188",
+          "asin": "2351420187"
+        },
+        {
+          "id": "e31288f3-a313-4a9b-a193-857a9fb227ab",
+          "title": "Tome 1",
+          "number": 1,
+          "date_parution": "2005-09-08",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51-4u%2B8MwSL.jpg",
+          "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+          "isbn": "9782351420171",
+          "asin": "2351420179"
+        }
+      ]
+    }
+  ],
+  "kinds": [
+    {
+      "id": "5f2df76f-b8d1-4db6-9e36-506cabdbb1db",
+      "title": "Action"
+    },
+    {
+      "id": "7673ab04-ceca-4388-b52b-7b4d2af58e45",
+      "title": "Aventure"
+    },
+    {
+      "id": "59a6ad18-392a-4e22-98ad-61fe58f0fee5",
+      "title": "Fantasy"
+    },
+    {
+      "id": "d5a3385a-cfcd-45f6-8f82-0c80956b084d",
+      "title": "Shōnen"
+    },
+    {
+      "id": "b11d8bef-8923-4ab3-a306-d8c81210a7ff",
+      "title": "Militaire"
+    },
+    {
+      "id": "4e48969d-a4cb-4474-9111-73a46dfe75b4",
+      "title": "Science"
+    },
+    {
+      "id": "2597a4da-1a45-4433-a95a-3d7774b3b3cf",
+      "title": "Série fleuve"
+    },
+    {
+      "id": "ea05bf0a-f1f5-4b27-9bc7-7c7ca5f5a21a",
+      "title": "Super-pouvoirs"
+    }
+  ]
+}
