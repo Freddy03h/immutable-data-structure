@@ -1,0 +1,17 @@
+{
+  "name": "immutable-data-structure",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "immutable": "4.0.0-rc.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^20.0.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^20.0.4"
+  }
+}
