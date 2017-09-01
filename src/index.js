@@ -94,6 +94,10 @@ export const updateRecord = (store, Record, newData, foreignKeys = [], primaryKe
 export const deleteRecord = (store, id, foreignKeys = []) => {
   const data = store.getIn(['data', id])
 
+  if(!data) {
+    return store
+  }
+
   return store.deleteIn(['data', id])
     .withMutations((collection) => {
       foreignKeys.forEach(
