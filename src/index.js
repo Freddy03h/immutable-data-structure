@@ -1,45 +1,13 @@
 import Immutable from 'immutable'
 
-const mapListToTuple = (list, key, record) => list.map((item) => [item.get(key), record ? new record(item) : item])
+const mapListToTuple = (list, key) => list.map((item) => [item.get(key), item])
 
 export const listToMapWithKey = (list, key) => Immutable.Map(mapListToTuple(list, key))
-export const listToOrderedMapWithKey = (list, key) => Immutable.OrderedMap(mapListToTuple(list, key))
 
-export const arrayToMapWithKey = (array, key) => listToMapWithKey(Immutable.fromJS(array), key)
-export const arrayToOrderedMapWithKey = (array, key) => listToOrderedMapWithKey(Immutable.fromJS(array), key)
+////
 
-export const listToMapWithKeyAndRecord = (list, key, record) => Immutable.Map(mapListToTuple(list, key, record))
-export const listToOrderedMapWithKeyAndRecord = (list, key, record) => Immutable.OrderedMap(mapListToTuple(list, key, record))
-
-// predicate function for Immutable
-export function keyIn(keys) {
-  const keySet = Immutable.Set(keys)
-  return (v, k) => keySet.has(k)
-}
-
-export const listGroupToMapByForeignKey = (list, foreign_id, key = 'id') => {
-  return list.reduce((accumulator, item) => {
-    if (!item.get(foreign_id)) {
-      return accumulator
-    }
-    return accumulator.update(
-      item.get(foreign_id),
-      Immutable.Set(),
-      (item_ids) => item_ids.add(item.get(key)),
-    )
-  }, Immutable.Map())
-}
-
-export const listGroupToMapByForeignKeys = (list, foreign_ids, key = 'id') => {
-  return list.reduce((accumulator, item) => {
-    return item.get(foreign_ids).reduce((acc, foreign_id) => {
-      return acc.update(
-        foreign_id,
-        Immutable.Set(),
-        (item_ids) => item_ids.add(item.get(key)),
-      )
-    }, accumulator)
-  }, Immutable.Map())
+export const getDataById = (store, moduleName, id) => {
+  return store.getIn([moduleName, 'data', id])
 }
 
 export const getDataByForeignId = (store, moduleName, foreignIdKey, foreignId, key = 'id') => {
