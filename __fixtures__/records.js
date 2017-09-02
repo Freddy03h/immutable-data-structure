@@ -24,12 +24,10 @@ export const VolumeRecord = Immutable.Record({
   id: null,
   title: null,
   number: null,
-  date_parution: null,
+  date: null,
   img: null,
   isbn: null,
-  asin: null,
   edition_id: null,
   content: null,
-  nb_pages: null,
 })
 export const volumeForeignKeys = ['edition_id']
