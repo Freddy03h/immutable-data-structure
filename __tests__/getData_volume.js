@@ -1,6 +1,6 @@
 import Immutable from 'immutable'
 import {
-  createMergeRecords, createMergeCompleteListsRecords, updateRecord,
+  createMergeRecords, createMergeCompleteListsRecords, createUpdateRecord,
   getDataById, getDataByForeignId, getDataByForeignIdThroughOtherForeignId,
 } from '../src/index'
 
@@ -14,20 +14,21 @@ import {
   SerieRecord, serieForeignKeys,
 } from '../__fixtures__/records'
 
+const updateSerieRecord = createUpdateRecord(SerieRecord, serieForeignKeys)
 const mergeVolumeRecords = createMergeRecords(VolumeRecord, volumeForeignKeys)
 const mergeVolumeRecordsFromSeries = createMergeCompleteListsRecords(mergeVolumeRecords, 'volumes', 'edition_id')
 const mergeEditionRecords = createMergeRecords(EditionRecord, editionForeignKeys)
 
 const serieA = Immutable.fromJS(serieFullmetalAlchemistJSON)
 const store_tmp = Immutable.Map({
-  series: updateRecord(initialState, SerieRecord, serieA, serieForeignKeys),
+  series: updateSerieRecord(initialState, serieA),
   editions: mergeEditionRecords(initialState, serieA.get('editions')),
   volumes: mergeVolumeRecordsFromSeries(initialState, serieA.get('editions')),
 })
 
 const serieB = Immutable.fromJS(serieDeathNoteJSON)
 const store = Immutable.Map({
-  series: updateRecord(store_tmp.get('series'), SerieRecord, serieB, serieForeignKeys),
+  series: updateSerieRecord(store_tmp.get('series'), serieB),
   editions: mergeEditionRecords(store_tmp.get('editions'), serieB.get('editions')),
   volumes: mergeVolumeRecordsFromSeries(store_tmp.get('volumes'), serieB.get('editions')),
 })

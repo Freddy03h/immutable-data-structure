@@ -4,7 +4,7 @@ const mapListToTuple = (list, key) => list.map((item) => [item.get(key), item])
 
 export const listToMapWithKey = (list, key) => Immutable.Map(mapListToTuple(list, key))
 
-////
+//////////
 
 export const getDataById = (store, moduleName, id) => {
   return store.getIn([moduleName, 'data', id])
@@ -38,7 +38,7 @@ export const getDataByForeignIdThroughOtherForeignId = (store, moduleName, forei
   return getDataByForeignIds(store, moduleName, foreignIdKey, otherForeignIds, key)
 }
 
-//////
+//////////
 
 export const updateRecord = (store, Record, newData, foreignKeys = [], primaryKey = 'id') => {
   const id = newData.get(primaryKey)
@@ -59,6 +59,14 @@ export const updateRecord = (store, Record, newData, foreignKeys = [], primaryKe
     })
 }
 
+export const createUpdateRecord = (Record, foreignKeys = [], primaryKey = 'id') => {
+  return (store, newData) => {
+    return updateRecord(store, Record, newData, foreignKeys, primaryKey)
+  }
+}
+
+//////////
+
 export const deleteRecord = (store, id, foreignKeys = []) => {
   const data = store.getIn(['data', id])
 
@@ -75,6 +83,14 @@ export const deleteRecord = (store, id, foreignKeys = []) => {
       )
     })
 }
+
+export const createDeleteRecord = (foreignKeys = []) => {
+  return (store, id) => {
+    return deleteRecord(store, id, foreignKeys)
+  }
+}
+
+//////////
 
 export const mergeRecords = (store, Record, listData, foreignKeys = [], primaryKey = 'id', completeKeysPath = null) => {
   let keysToRemove = null
