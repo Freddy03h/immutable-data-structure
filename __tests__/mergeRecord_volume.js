@@ -47,7 +47,7 @@ describe('mergeRecords volume', () => {
   })
 
 
-  test('one author with 3 series and many editions', () => {
+  test('one author with 3 series and many volumes', () => {
     const author = Immutable.fromJS(authorObaJSON)
     const editionsAuthor = author.get('tasks')
       .map((task) => task.getIn(['series', 'editions']))
@@ -58,26 +58,22 @@ describe('mergeRecords volume', () => {
     ).toMatchSnapshot()
   })
 
-  // test('one serie then author of the serie but an edition is missing', () => {
-  //   const serie = Immutable.fromJS(serieDeathNoteJSON)
-  //   const author = Immutable.fromJS(authorObaJSON)
+  test('one serie then author of the serie but volumes in an edition are missing', () => {
+    const serie = Immutable.fromJS(serieDeathNoteJSON)
+    const author = Immutable.fromJS(authorObaJSON)
 
-  //   const store = mergeRecords(initialState, VolumeRecord, serie.get('editions'), volumeForeignKeys)
+    const store = mergeVolumeRecordsFromSeries(initialState, serie.get('editions'))
 
-  //   const seriesAuthor = author.get('tasks')
-  //     .map((task) => task.get('series'))
-  //     .removeIn([2, 'editions']) // remove death note editions, so it supposed to be deleted from store
+    const editionsAuthor = author.get('tasks')
+      .map((task) => task.getIn(['series', 'editions']))
+      .flatten(true)
+      .removeIn([2, 'volumes']) // remove death note black edition volumes, so it supposed to be deleted from store
 
-  //   expect(
-  //     store.withMutations((collection) => {
-  //       seriesAuthor.forEach(
-  //         (serie) => {
-  //           mergeRecords(collection, VolumeRecord, serie.get('editions'), volumeForeignKeys, 'id', ['series_id', serie.get('id')])
-  //         }
-  //       )
-  //     })
-  //   ).toMatchSnapshot()
-  // })
+
+    expect(
+      mergeVolumeRecordsFromSeries(store, editionsAuthor)
+    ).toMatchSnapshot()
+  })
 
 
 })
