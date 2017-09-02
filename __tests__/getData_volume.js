@@ -2,6 +2,7 @@ import Immutable from 'immutable'
 import {
   createMergeRecords, createMergeCompleteListsRecords, createUpdateRecord,
   getDataById, getDataByForeignId, getDataByForeignIdThroughOtherForeignId,
+  getDatas, getForeignIds,
 } from '../src/index'
 
 import serieDeathNoteJSON from '../__fixtures__/serie_death_note.json'
@@ -50,6 +51,18 @@ describe('getData volume', () => {
   test('get volumes with series_id', () => {
     expect(
       getDataByForeignIdThroughOtherForeignId(store, 'volumes', 'edition_id', 'editions', 'series_id', '320071be-4196-402b-98d7-d34bec8a1aab')
+    ).toMatchSnapshot()
+  })
+
+  test('get all volumes', () => {
+    expect(
+      getDatas(store, 'volumes')
+    ).toMatchSnapshot()
+  })
+
+  test('get volumes ids edition_id', () => {
+    expect(
+      getForeignIds(store, 'volumes', 'edition_id', '908612fd-1cc7-4780-aea4-63d3ac04c6bd')
     ).toMatchSnapshot()
   })
 

@@ -10,6 +10,14 @@ export const getDataById = (store, moduleName, id) => {
   return store.getIn([moduleName, 'data', id])
 }
 
+export const getDatas = (store, moduleName) => {
+  return store.getIn([moduleName, 'data'])
+}
+
+export const getForeignIds = (store, moduleName, foreignIdKey, id) => {
+  return store.getIn([moduleName, 'relations', foreignIdKey, id])
+}
+
 export const getDataByForeignId = (store, moduleName, foreignIdKey, foreignId, key = 'id') => {
   const relatedItemIds = store.getIn([moduleName, 'relations', foreignIdKey, foreignId], Immutable.Map())
   const listRelatedItemIds = relatedItemIds.map((itemId) => store.getIn([moduleName, 'data', itemId])).toList()
@@ -92,7 +100,7 @@ export const createDeleteRecord = (foreignKeys = []) => {
 
 //////////
 
-export const mergeRecords = (store, Record, listData, foreignKeys = [], primaryKey = 'id', completeKeysPath = null) => {
+export const mergeRecords = (updateFunc, deleteFunc, store, listData, primaryKey = 'id', completeKeysPath = null) => {
   let keysToRemove = null
   if(completeKeysPath) {
     const completeKeys = store.getIn(['relations', ...completeKeysPath])
@@ -108,7 +116,7 @@ export const mergeRecords = (store, Record, listData, foreignKeys = [], primaryK
       if(listData) {
         listData.forEach(
           (mapItem) => {
-            updateRecord(collection, Record, mapItem, foreignKeys, primaryKey)
+            updateFunc(collection, mapItem)
           }
         )
       }
@@ -116,7 +124,7 @@ export const mergeRecords = (store, Record, listData, foreignKeys = [], primaryK
       if(keysToRemove) {
         keysToRemove.forEach(
           (id) => {
-            deleteRecord(collection, id, foreignKeys)
+            deleteFunc(collection, id)
           }
         )
       }
@@ -124,8 +132,10 @@ export const mergeRecords = (store, Record, listData, foreignKeys = [], primaryK
 }
 
 export const createMergeRecords = (Record, foreignKeys = [], primaryKey = 'id') => {
+  const updateFunc = createUpdateRecord(Record, foreignKeys, primaryKey)
+  const deleteFunc = createDeleteRecord(foreignKeys)
   return (store, listData, completeKeysPath = null) => {
-    return mergeRecords(store, Record, listData, foreignKeys, primaryKey, completeKeysPath)
+    return mergeRecords(updateFunc, deleteFunc, store, listData, primaryKey, completeKeysPath)
   }
 }
 
