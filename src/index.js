@@ -100,15 +100,13 @@ export const createDeleteRecord = (foreignKeys = []) => {
 
 //////////
 
-export const mergeRecords = (updateFunc, deleteFunc, store, listData, primaryKey = 'id', completeKeysPath = null) => {
+export const mergeRecords = (updateFunc, deleteFunc, store, listData, primaryKey = 'id', completeKeys = null) => {
   let keysToRemove = null
-  if(completeKeysPath) {
-    const completeKeys = store.getIn(['relations', ...completeKeysPath])
-    if(completeKeys) {
-      const actuelKeys = listData ? listData.map((mapItem) => mapItem.get(primaryKey)).toSet() : Immutable.Set()
 
-      keysToRemove = completeKeys.subtract(actuelKeys)
-    }
+  if(completeKeys) {
+    const actuelKeys = listData ? listData.map((mapItem) => mapItem.get(primaryKey)).toSet() : Immutable.Set()
+
+    keysToRemove = completeKeys.subtract(actuelKeys)
   }
 
   return store
@@ -134,8 +132,15 @@ export const mergeRecords = (updateFunc, deleteFunc, store, listData, primaryKey
 export const createMergeRecords = (Record, foreignKeys = [], primaryKey = 'id') => {
   const updateFunc = createUpdateRecord(Record, foreignKeys, primaryKey)
   const deleteFunc = createDeleteRecord(foreignKeys)
-  return (store, listData, completeKeysPath = null) => {
-    return mergeRecords(updateFunc, deleteFunc, store, listData, primaryKey, completeKeysPath)
+  return (store, listData, isComplete = false, completeKeysPath = null) => {
+    let completeKeys
+    if(isComplete && !completeKeysPath) {
+      completeKeys = store.get('data').keySeq().toSet()
+    } else if (completeKeysPath) {
+      completeKeys = store.getIn(['relations', ...completeKeysPath])
+    }
+
+    return mergeRecords(updateFunc, deleteFunc, store, listData, primaryKey, completeKeys)
   }
 }
 
@@ -146,7 +151,7 @@ export const mergeCompleteListsRecords = (mergeFunc, store, listData, entitiesKe
     .withMutations((collection) => {
       listData.forEach(
         (mapItem) => {
-          mergeFunc(collection, mapItem.get(entitiesKey), [foreignKey, mapItem.get(keyDataPrimary)])
+          mergeFunc(collection, mapItem.get(entitiesKey), false, [foreignKey, mapItem.get(keyDataPrimary)])
         }
       )
     })

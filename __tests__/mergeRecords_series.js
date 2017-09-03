@@ -1,9 +1,11 @@
 import Immutable from 'immutable'
-import { createMergeRecords } from '../src/index'
+import { createMergeRecords, createUpdateRecord } from '../src/index'
 
 import seriesJSON from '../__fixtures__/series.json'
+import serieFullmetalAlchemistJSON from '../__fixtures__/serie_fullmetal_alchemist.json'
 import { initialState, SerieRecord, serieForeignKeys } from '../__fixtures__/records'
 
+const updateSerieRecord = createUpdateRecord(SerieRecord, serieForeignKeys)
 const mergeSeriesRecords = createMergeRecords(SerieRecord, serieForeignKeys)
 
 describe('mergeRecords series', () => {
@@ -38,10 +40,21 @@ describe('mergeRecords series', () => {
     const seriesLittle = series.splice(5)
     const store = mergeSeriesRecords(initialState, series)
 
-    // for this case, we don't need to do something in the lib
-    // just don't use the previous store (use initialState instead of store)
     expect(
-      mergeSeriesRecords(initialState, seriesLittle)
+      mergeSeriesRecords(store, seriesLittle, true)
+    ).toMatchSnapshot()
+  })
+
+  test('little list with on update on big store', () => {
+    const series = Immutable.fromJS(seriesJSON)
+    const seriesLittle = series.splice(6)
+    const serie = Immutable.fromJS(serieFullmetalAlchemistJSON)
+
+    const store1 = mergeSeriesRecords(initialState, series)
+    const store2 = updateSerieRecord(store1, serie)
+
+    expect(
+      mergeSeriesRecords(store2, seriesLittle, true)
     ).toMatchSnapshot()
   })
 

@@ -181,14 +181,19 @@ Immutable.Map {
 exports[`mergeRecords series little list with big store 1`] = `
 Immutable.Map {
   data: Immutable.Map {
-    a02cf154-af6c-4f08-9a7a-32f7bc229ac8: Object {
-      "id": "a02cf154-af6c-4f08-9a7a-32f7bc229ac8",
-      "title": "One Piece",
-      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
-    },
     d1a38f41-2ac9-40cf-aa17-aeac9697e1c8: Object {
       "id": "d1a38f41-2ac9-40cf-aa17-aeac9697e1c8",
       "title": "Naruto",
+      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+    },
+    f41a928c-8450-40e9-805b-3ccf3ac49705: Object {
+      "id": "f41a928c-8450-40e9-805b-3ccf3ac49705",
+      "title": "Berserk",
+      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+    },
+    a02cf154-af6c-4f08-9a7a-32f7bc229ac8: Object {
+      "id": "a02cf154-af6c-4f08-9a7a-32f7bc229ac8",
+      "title": "One Piece",
       "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
     },
     96138837-ef12-4a8f-869a-ea745047b41f: Object {
@@ -201,22 +206,19 @@ Immutable.Map {
       "title": "Dragon Ball",
       "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
     },
-    f41a928c-8450-40e9-805b-3ccf3ac49705: Object {
-      "id": "f41a928c-8450-40e9-805b-3ccf3ac49705",
-      "title": "Berserk",
-      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
-    },
   },
   relations: Immutable.Map {
     type_id: Immutable.Map {
       106f524e-7283-44b8-aa84-25e9a7fb1f7d: Immutable.Set [
-        "a02cf154-af6c-4f08-9a7a-32f7bc229ac8",
         "d1a38f41-2ac9-40cf-aa17-aeac9697e1c8",
-        "940629b6-a0df-4bd2-970d-b75d19336793",
         "f41a928c-8450-40e9-805b-3ccf3ac49705",
+        "a02cf154-af6c-4f08-9a7a-32f7bc229ac8",
+        "940629b6-a0df-4bd2-970d-b75d19336793",
       ],
       3c009f18-811d-4b07-8dde-8249e422ec9e: Immutable.Set [
         "96138837-ef12-4a8f-869a-ea745047b41f",
+      ],
+      bb3d92a9-020a-4d3f-adec-77bebe9980db: Immutable.Set [
       ],
     },
   },
@@ -262,6 +264,59 @@ Immutable.Map {
       ],
       3c009f18-811d-4b07-8dde-8249e422ec9e: Immutable.Set [
         "96138837-ef12-4a8f-869a-ea745047b41f",
+      ],
+    },
+  },
+}
+`;
+
+exports[`mergeRecords series little list with on update on big store 1`] = `
+Immutable.Map {
+  data: Immutable.Map {
+    d1a38f41-2ac9-40cf-aa17-aeac9697e1c8: Object {
+      "id": "d1a38f41-2ac9-40cf-aa17-aeac9697e1c8",
+      "title": "Naruto",
+      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+    },
+    f41a928c-8450-40e9-805b-3ccf3ac49705: Object {
+      "id": "f41a928c-8450-40e9-805b-3ccf3ac49705",
+      "title": "Berserk",
+      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+    },
+    a02cf154-af6c-4f08-9a7a-32f7bc229ac8: Object {
+      "id": "a02cf154-af6c-4f08-9a7a-32f7bc229ac8",
+      "title": "One Piece",
+      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+    },
+    96138837-ef12-4a8f-869a-ea745047b41f: Object {
+      "id": "96138837-ef12-4a8f-869a-ea745047b41f",
+      "title": "Dreamland",
+      "type_id": "3c009f18-811d-4b07-8dde-8249e422ec9e",
+    },
+    b9652346-95db-45ef-982b-de9f9d3ac01f: Object {
+      "id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
+      "title": "Fullmetal Alchemist",
+      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+    },
+    940629b6-a0df-4bd2-970d-b75d19336793: Object {
+      "id": "940629b6-a0df-4bd2-970d-b75d19336793",
+      "title": "Dragon Ball",
+      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+    },
+  },
+  relations: Immutable.Map {
+    type_id: Immutable.Map {
+      106f524e-7283-44b8-aa84-25e9a7fb1f7d: Immutable.Set [
+        "d1a38f41-2ac9-40cf-aa17-aeac9697e1c8",
+        "f41a928c-8450-40e9-805b-3ccf3ac49705",
+        "a02cf154-af6c-4f08-9a7a-32f7bc229ac8",
+        "b9652346-95db-45ef-982b-de9f9d3ac01f",
+        "940629b6-a0df-4bd2-970d-b75d19336793",
+      ],
+      3c009f18-811d-4b07-8dde-8249e422ec9e: Immutable.Set [
+        "96138837-ef12-4a8f-869a-ea745047b41f",
+      ],
+      bb3d92a9-020a-4d3f-adec-77bebe9980db: Immutable.Set [
       ],
     },
   },
