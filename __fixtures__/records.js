@@ -9,6 +9,7 @@ export const SerieRecord = Immutable.Record({
   id: null,
   title: null,
   type_id: null,
+  possessions_count: null,
 })
 export const serieForeignKeys = ['type_id']
 
