@@ -1,9 +1,9 @@
 import Immutable from 'immutable'
-import { createMergeRecords, createUpdateRecord } from '../src/index'
+import { initialState, createMergeRecords, createUpdateRecord } from '../src/index'
 
 import seriesJSON from '../__fixtures__/series.json'
 import serieFullmetalAlchemistJSON from '../__fixtures__/serie_fullmetal_alchemist.json'
-import { initialState, SerieRecord, serieForeignKeys } from '../__fixtures__/records'
+import { SerieRecord, serieForeignKeys } from '../__fixtures__/records'
 
 const updateSerieRecord = createUpdateRecord(SerieRecord, serieForeignKeys)
 const mergeSeriesRecords = createMergeRecords(SerieRecord, serieForeignKeys)

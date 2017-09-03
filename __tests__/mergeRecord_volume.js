@@ -1,10 +1,10 @@
 import Immutable from 'immutable'
-import { createMergeRecords, createMergeCompleteListsRecords } from '../src/index'
+import { initialState, createMergeRecords, createMergeCompleteListsRecords } from '../src/index'
 
 import serieDeathNoteJSON from '../__fixtures__/serie_death_note.json'
 import serieFullmetalAlchemistJSON from '../__fixtures__/serie_fullmetal_alchemist.json'
 import authorObaJSON from '../__fixtures__/author_oba.json'
-import { initialState, VolumeRecord, volumeForeignKeys } from '../__fixtures__/records'
+import { VolumeRecord, volumeForeignKeys } from '../__fixtures__/records'
 
 const mergeVolumeRecords = createMergeRecords(VolumeRecord, volumeForeignKeys)
 const mergeVolumeRecordsFromSeries = createMergeCompleteListsRecords(mergeVolumeRecords, 'volumes', 'edition_id')

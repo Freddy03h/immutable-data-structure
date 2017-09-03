@@ -1,5 +1,6 @@
 import Immutable from 'immutable'
 import {
+  initialState,
   createMergeRecords, createMergeCompleteListsRecords, createUpdateRecord,
   getDataById, getDataByForeignId, getDataByForeignIdThroughOtherForeignId,
   getDatas, getForeignIds,
@@ -9,7 +10,6 @@ import serieDeathNoteJSON from '../__fixtures__/serie_death_note.json'
 import serieFullmetalAlchemistJSON from '../__fixtures__/serie_fullmetal_alchemist.json'
 
 import {
-  initialState,
   VolumeRecord, volumeForeignKeys,
   EditionRecord, editionForeignKeys,
   SerieRecord, serieForeignKeys,

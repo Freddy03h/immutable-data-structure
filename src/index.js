@@ -1,5 +1,12 @@
 import Immutable from 'immutable'
 
+export const initialState = Immutable.Map({
+  data: Immutable.Map(),
+  relations: Immutable.Map(),
+})
+
+//////////
+
 const mapListToTuple = (list, key) => list.map((item) => [item.get(key), item])
 
 export const listToMapWithKey = (list, key) => Immutable.Map(mapListToTuple(list, key))
