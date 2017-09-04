@@ -619,6 +619,11 @@ Immutable.Set [
 ]
 `;
 
+exports[`getData volume get volumes ids edition_id doesn't exist 1`] = `
+Immutable.Set [
+]
+`;
+
 exports[`getData volume get volumes with edition_id 1`] = `
 Immutable.Map {
   ec9d0282-78a1-491e-bd1e-a937b332c56f: Object {
@@ -681,6 +686,11 @@ Immutable.Map {
     "number": 1,
     "title": "Tome 1",
   },
+}
+`;
+
+exports[`getData volume get volumes with edition_id doesn't exist 1`] = `
+Immutable.Map {
 }
 `;
 

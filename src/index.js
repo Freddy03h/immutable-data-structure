@@ -22,12 +22,12 @@ export const getDatas = (store, moduleName) => {
 }
 
 export const getForeignIds = (store, moduleName, foreignIdKey, id) => {
-  return store.getIn([moduleName, 'relations', foreignIdKey, id])
+  return store.getIn([moduleName, 'relations', foreignIdKey, id], Immutable.Set())
 }
 
 export const getDataByForeignId = (store, moduleName, foreignIdKey, foreignId, key = 'id') => {
-  const relatedItemIds = store.getIn([moduleName, 'relations', foreignIdKey, foreignId], Immutable.Map())
-  const listRelatedItemIds = relatedItemIds.map((itemId) => store.getIn([moduleName, 'data', itemId])).toList()
+  const relatedItemIds = getForeignIds(store, moduleName, foreignIdKey, foreignId)
+  const listRelatedItemIds = relatedItemIds.map((itemId) => getDataById(store, moduleName, itemId)).toList()
 
   return listToMapWithKey(listRelatedItemIds, key)
 }
@@ -35,20 +35,20 @@ export const getDataByForeignId = (store, moduleName, foreignIdKey, foreignId, k
 export const getDataByForeignIds = (store, moduleName, foreignIdKey, foreignIds, key = 'id') => {
   const relatedItemIds = foreignIds
     ? foreignIds.reduce((accumulator, otherItemId) => {
-        const itemIds = store.getIn([moduleName, 'relations', foreignIdKey, otherItemId])
+        const itemIds = getForeignIds(store, moduleName, foreignIdKey, otherItemId)
         return itemIds ? accumulator.union(itemIds) : accumulator
       }, Immutable.Set())
     : Immutable.Set()
 
   const listRelatedItemIds = relatedItemIds
-    ? relatedItemIds.map((itemId) => store.getIn([moduleName, 'data', itemId])).toList()
+    ? relatedItemIds.map((itemId) => getDataById(store, moduleName, itemId)).toList()
     : Immutable.List()
 
   return listToMapWithKey(listRelatedItemIds, key)
 }
 
 export const getDataByForeignIdThroughOtherForeignId = (store, moduleName, foreignIdKey, otherModuleName, otherForeignIdKey, otherForeignId, key = 'id') => {
-  const otherForeignIds = store.getIn([otherModuleName, 'relations', otherForeignIdKey, otherForeignId])
+  const otherForeignIds = getForeignIds(store, otherModuleName, otherForeignIdKey, otherForeignId)
 
   return getDataByForeignIds(store, moduleName, foreignIdKey, otherForeignIds, key)
 }

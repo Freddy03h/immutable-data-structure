@@ -48,6 +48,12 @@ describe('getData volume', () => {
     ).toMatchSnapshot()
   })
 
+  test('get volumes with edition_id doesn\'t exist', () => {
+    expect(
+      getDataByForeignId(store, 'volumes', 'edition_id', 'toto')
+    ).toMatchSnapshot()
+  })
+
   test('get volumes with series_id', () => {
     expect(
       getDataByForeignIdThroughOtherForeignId(store, 'volumes', 'edition_id', 'editions', 'series_id', '320071be-4196-402b-98d7-d34bec8a1aab')
@@ -63,6 +69,12 @@ describe('getData volume', () => {
   test('get volumes ids edition_id', () => {
     expect(
       getForeignIds(store, 'volumes', 'edition_id', '908612fd-1cc7-4780-aea4-63d3ac04c6bd')
+    ).toMatchSnapshot()
+  })
+
+  test('get volumes ids edition_id doesn\'t exist', () => {
+    expect(
+      getForeignIds(store, 'volumes', 'edition_id', 'toto')
     ).toMatchSnapshot()
   })
 
