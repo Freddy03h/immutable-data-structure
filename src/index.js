@@ -32,6 +32,20 @@ export const getDataByForeignId = (store, moduleName, foreignIdKey, foreignId, k
   return listToMapWithKey(listRelatedItemIds, key)
 }
 
+export const getIdsByTwoForeignId = (store, moduleName, foreignIdKey1, id1, foreignIdKey2, id2) => {
+  const set1 = getForeignIds(store, moduleName, foreignIdKey1, id1)
+  const set2 = getForeignIds(store, moduleName, foreignIdKey2, id2)
+
+  return set1.intersect(set2)
+}
+
+export const getDataByTwoForeignId = (store, moduleName, foreignIdKey1, id1, foreignIdKey2, id2, key = 'id') => {
+  const relatedItemIds = getIdsByTwoForeignId(store, moduleName, foreignIdKey1, id1, foreignIdKey2, id2)
+  const listRelatedItemIds = relatedItemIds.map((itemId) => getDataById(store, moduleName, itemId)).toList()
+
+  return listToMapWithKey(listRelatedItemIds, key)
+}
+
 export const getDataByForeignIds = (store, moduleName, foreignIdKey, foreignIds, key = 'id') => {
   const relatedItemIds = foreignIds
     ? foreignIds.reduce((accumulator, otherItemId) => {
