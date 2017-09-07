@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`getData edition get edition ids with series_id and publisher_id 1`] = `
-Immutable.Set [
+Immutable.OrderedSet [
   "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
   "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
 ]

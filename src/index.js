@@ -22,7 +22,7 @@ export const getDatas = (store, moduleName) => {
 }
 
 export const getForeignIds = (store, moduleName, foreignIdKey, id) => {
-  return store.getIn([moduleName, 'relations', foreignIdKey, id], Immutable.Set())
+  return store.getIn([moduleName, 'relations', foreignIdKey, id], Immutable.OrderedSet())
 }
 
 export const getDataByForeignId = (store, moduleName, foreignIdKey, foreignId, key = 'id') => {
@@ -51,8 +51,8 @@ export const getDataByForeignIds = (store, moduleName, foreignIdKey, foreignIds,
     ? foreignIds.reduce((accumulator, otherItemId) => {
         const itemIds = getForeignIds(store, moduleName, foreignIdKey, otherItemId)
         return itemIds ? accumulator.union(itemIds) : accumulator
-      }, Immutable.Set())
-    : Immutable.Set()
+      }, Immutable.OrderedSet())
+    : Immutable.OrderedSet()
 
   const listRelatedItemIds = relatedItemIds
     ? relatedItemIds.map((itemId) => getDataById(store, moduleName, itemId)).toList()
@@ -81,7 +81,7 @@ export const updateRecord = (store, Record, newData, foreignKeys = [], primaryKe
             collection.updateIn(['relations', foreignKey, oldData.get(foreignKey)], (item_ids) => item_ids && item_ids.remove(id))
           }
           if(newData.get(foreignKey)) {
-            collection.updateIn(['relations', foreignKey, newData.get(foreignKey)], new Immutable.Set(), (item_ids) => item_ids.add(id))
+            collection.updateIn(['relations', foreignKey, newData.get(foreignKey)], new Immutable.OrderedSet(), (item_ids) => item_ids.add(id))
           }
         }
       )
@@ -125,7 +125,7 @@ export const mergeRecords = (updateFunc, deleteFunc, store, listData, primaryKey
   let keysToRemove = null
 
   if(completeKeys) {
-    const actuelKeys = listData ? listData.map((mapItem) => mapItem.get(primaryKey)).toSet() : Immutable.Set()
+    const actuelKeys = listData ? listData.map((mapItem) => mapItem.get(primaryKey)).toSet() : Immutable.OrderedSet()
 
     keysToRemove = completeKeys.subtract(actuelKeys)
   }

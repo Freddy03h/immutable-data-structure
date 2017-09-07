@@ -609,7 +609,7 @@ Object {
 `;
 
 exports[`getData volume get volumes ids edition_id 1`] = `
-Immutable.Set [
+Immutable.OrderedSet [
   "ec9d0282-78a1-491e-bd1e-a937b332c56f",
   "ef282203-2ef5-4972-9598-d365fe7ff09c",
   "69fed8ee-a500-4bde-9ba2-458f639785d1",
@@ -620,7 +620,7 @@ Immutable.Set [
 `;
 
 exports[`getData volume get volumes ids edition_id doesn't exist 1`] = `
-Immutable.Set [
+Immutable.OrderedSet [
 ]
 `;
 
