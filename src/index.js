@@ -152,26 +152,43 @@ export const mergeRecords = (updateFunc, deleteFunc, store, listData, primaryKey
 export const createMergeRecords = (Record, foreignKeys = [], primaryKey = 'id') => {
   const updateFunc = createUpdateRecord(Record, foreignKeys, primaryKey)
   const deleteFunc = createDeleteRecord(foreignKeys)
-  return (store, listData, isComplete = false, completeKeysPath = null) => {
+  return (store, listData, completeKeysPath = null) => {
     let completeKeys
-    let oldStore = store
-    if(isComplete && !completeKeysPath) {
-      completeKeys = store.get('data').keySeq().toSet()
-      // store = store.updateIn(['relations'], () => initialState.get('relations'))
-      store = store.update('relations', (r) => r.clear()).update('data', (d) => d.clear())
-    } else if (completeKeysPath) {
+    if (completeKeysPath) {
       completeKeys = store.getIn(['relations', ...completeKeysPath])
       store = store.updateIn(['relations', ...completeKeysPath], () => Immutable.OrderedSet())
     }
 
-    let newStore = mergeRecords(updateFunc, deleteFunc, store, listData, primaryKey, completeKeys)
+    return mergeRecords(updateFunc, deleteFunc, store, listData, primaryKey, completeKeys)
+  }
+}
 
-    if(isComplete && !completeKeysPath) {
-      const oldStoreFiltred = oldStore.get('data').filter((s) => newStore.get('data').has(s.get('id')))
-      newStore = mergeRecords(updateFunc, deleteFunc, newStore, oldStoreFiltred, primaryKey)
-    }
+//////////
 
-    return newStore
+// To use only if listData is the entire list AND want to keep order, otherwise use "mergeRecords"
+export const replaceRecords = (updateFunc, store, listData, primaryKey = 'id') => {
+  return store
+    .update('relations', (r) => r.clear())
+    .update('data', (d) => d.clear())
+    .withMutations((collection) => {
+      if(listData) {
+        listData.forEach(
+          (mapItem) => {
+            const currentItemInState = store.getIn(['data', mapItem.get(primaryKey)])
+            if (currentItemInState) {
+              updateFunc(collection, currentItemInState)
+            }
+            updateFunc(collection, mapItem)
+          }
+        )
+      }
+    })
+}
+
+export const createReplaceRecords = (Record, foreignKeys = [], primaryKey = 'id') => {
+  const updateFunc = createUpdateRecord(Record, foreignKeys, primaryKey)
+  return (store, listData) => {
+    return replaceRecords(updateFunc, store, listData, primaryKey)
   }
 }
 
@@ -182,7 +199,7 @@ export const mergeCompleteListsRecords = (mergeFunc, store, listData, entitiesKe
     .withMutations((collection) => {
       listData.forEach(
         (mapItem) => {
-          mergeFunc(collection, mapItem.get(entitiesKey), false, [foreignKey, mapItem.get(keyDataPrimary)])
+          mergeFunc(collection, mapItem.get(entitiesKey), [foreignKey, mapItem.get(keyDataPrimary)])
         }
       )
     })

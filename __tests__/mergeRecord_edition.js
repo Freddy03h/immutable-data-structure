@@ -39,7 +39,7 @@ describe('mergeRecords edition', () => {
     const editionsSpliced = serieB.get('editions').splice(1)
 
     expect(
-      mergeEditionRecords(store2, editionsSpliced, false, ['series_id', serieB.get('id')])
+      mergeEditionRecords(store2, editionsSpliced, ['series_id', serieB.get('id')])
     ).toMatchSnapshot()
   })
 

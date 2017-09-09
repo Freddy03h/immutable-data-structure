@@ -15,23 +15,23 @@ describe('mergeRecords tasks', () => {
 
   test('one author with empty store', () => {
     expect(
-      mergeTasksRecords(initialState, author.get('tasks'), false, ['author_id', author.get('id')])
+      mergeTasksRecords(initialState, author.get('tasks'), ['author_id', author.get('id')])
     ).toMatchSnapshot()
   })
 
   test('one author then serie with empty store', () => {
-    const store = mergeTasksRecords(initialState, author.get('tasks'), false, ['author_id', author.get('id')])
+    const store = mergeTasksRecords(initialState, author.get('tasks'), ['author_id', author.get('id')])
     expect(
-      mergeTasksRecords(store, serie.get('tasks'), false, ['series_id', serie.get('id')])
+      mergeTasksRecords(store, serie.get('tasks'), ['series_id', serie.get('id')])
     ).toMatchSnapshot()
   })
 
   test('one author change task order', () => {
     const authorEdited = author.updateIn(['tasks'], (list) => list.sortBy((item) => item.get('id')))
-    const store = mergeTasksRecords(initialState, authorEdited.get('tasks'), false, ['author_id', authorEdited.get('id')])
+    const store = mergeTasksRecords(initialState, authorEdited.get('tasks'), ['author_id', authorEdited.get('id')])
 
     expect(
-      mergeTasksRecords(store, author.get('tasks'), false, ['author_id', author.get('id')])
+      mergeTasksRecords(store, author.get('tasks'), ['author_id', author.get('id')])
     ).toMatchSnapshot()
   })
 

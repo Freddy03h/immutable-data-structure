@@ -1,5 +1,5 @@
 import Immutable from 'immutable'
-import { initialState, createMergeRecords, createUpdateRecord } from '../src/index'
+import { initialState, createMergeRecords, createUpdateRecord, createReplaceRecords } from '../src/index'
 
 import seriesJSON from '../__fixtures__/series.json'
 import serieFullmetalAlchemistJSON from '../__fixtures__/serie_fullmetal_alchemist.json'
@@ -8,6 +8,7 @@ import { SerieRecord, serieForeignKeys } from '../__fixtures__/records'
 const seriesInitialState = initialState.set('data', Immutable.OrderedMap())
 const updateSerieRecord = createUpdateRecord(SerieRecord, serieForeignKeys)
 const mergeSeriesRecords = createMergeRecords(SerieRecord, serieForeignKeys)
+const replaceSeriesRecords = createReplaceRecords(SerieRecord, serieForeignKeys)
 
 describe('mergeRecords series', () => {
 
@@ -42,7 +43,7 @@ describe('mergeRecords series', () => {
     const store = mergeSeriesRecords(seriesInitialState, series)
 
     expect(
-      mergeSeriesRecords(store, seriesLittle, true)
+      replaceSeriesRecords(store, seriesLittle)
     ).toMatchSnapshot()
   })
 
@@ -55,7 +56,7 @@ describe('mergeRecords series', () => {
     const store2 = updateSerieRecord(store1, serie)
 
     expect(
-      mergeSeriesRecords(store2, seriesLittle, true)
+      replaceSeriesRecords(store2, seriesLittle)
     ).toMatchSnapshot()
   })
 
@@ -66,7 +67,7 @@ describe('mergeRecords series', () => {
     const store = updateSerieRecord(seriesInitialState, serie)
 
     expect(
-      mergeSeriesRecords(store, series, true)
+      replaceSeriesRecords(store, series)
     ).toMatchSnapshot()
   })
 
