@@ -29,16 +29,6 @@ Immutable.Map {
     },
   },
   relations: Immutable.Map {
-    publisher_id: Immutable.Map {
-      122e0ec3-f072-4c5d-b40d-3eba4a82fe1e: Immutable.OrderedSet [
-        "73173187-5965-451c-adbe-84e3e719abc0",
-      ],
-      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.OrderedSet [
-        "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
-        "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
-        "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
-      ],
-    },
     series_id: Immutable.Map {
       fc34ad95-27cf-4cba-aafc-e9c37de532b4: Immutable.OrderedSet [
         "73173187-5965-451c-adbe-84e3e719abc0",
@@ -47,6 +37,16 @@ Immutable.Map {
         "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
       ],
       320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
+        "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+        "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      ],
+    },
+    publisher_id: Immutable.Map {
+      122e0ec3-f072-4c5d-b40d-3eba4a82fe1e: Immutable.OrderedSet [
+        "73173187-5965-451c-adbe-84e3e719abc0",
+      ],
+      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.OrderedSet [
+        "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       ],
@@ -94,6 +94,61 @@ Immutable.Map {
       ],
       b9652346-95db-45ef-982b-de9f9d3ac01f: Immutable.OrderedSet [
         "d42c9391-c92f-4485-a772-8df06d70ed17",
+      ],
+    },
+  },
+}
+`;
+
+exports[`mergeRecords edition one serie then author of the serie but an edition change publisher 1`] = `
+Immutable.Map {
+  data: Immutable.Map {
+    908612fd-1cc7-4780-aea4-63d3ac04c6bd: Object {
+      "id": "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+      "publisher_id": "122e0ec3-f072-4c5d-b40d-3eba4a82fe1e",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+      "title": "Black Edition",
+    },
+    5482eba9-2773-40d8-82f7-1870b1b2a3e9: Object {
+      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+      "title": "Edition simple",
+    },
+    73173187-5965-451c-adbe-84e3e719abc0: Object {
+      "id": "73173187-5965-451c-adbe-84e3e719abc0",
+      "publisher_id": "122e0ec3-f072-4c5d-b40d-3eba4a82fe1e",
+      "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
+      "title": "Edition simple",
+    },
+    8413f439-9bdd-42a2-bd40-4b0f6118dc8d: Object {
+      "id": "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "277484f9-d839-4b44-9f43-0743e6db540f",
+      "title": "Edition simple",
+    },
+  },
+  relations: Immutable.Map {
+    publisher_id: Immutable.Map {
+      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.OrderedSet [
+        "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+        "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
+      ],
+      122e0ec3-f072-4c5d-b40d-3eba4a82fe1e: Immutable.OrderedSet [
+        "73173187-5965-451c-adbe-84e3e719abc0",
+        "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+      ],
+    },
+    series_id: Immutable.Map {
+      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
+        "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+        "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      ],
+      fc34ad95-27cf-4cba-aafc-e9c37de532b4: Immutable.OrderedSet [
+        "73173187-5965-451c-adbe-84e3e719abc0",
+      ],
+      277484f9-d839-4b44-9f43-0743e6db540f: Immutable.OrderedSet [
+        "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
       ],
     },
   },

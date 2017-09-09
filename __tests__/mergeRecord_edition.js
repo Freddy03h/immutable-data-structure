@@ -69,5 +69,21 @@ describe('mergeRecords edition', () => {
     ).toMatchSnapshot()
   })
 
+  test('one serie then author of the serie but an edition change publisher', () => {
+    const serie = Immutable.fromJS(serieDeathNoteJSON)
+    const author = Immutable.fromJS(authorObaJSON)
+
+    const store = mergeEditionRecords(initialState, serie.get('editions'))
+
+    const seriesAuthor = author.get('tasks')
+      .map((task) => task.get('series'))
+      .updateIn([2, 'editions', 0, 'publisher_id'], () => '122e0ec3-f072-4c5d-b40d-3eba4a82fe1e')
+
+
+    expect(
+      mergeEditionRecordsFromSeries(store, seriesAuthor)
+    ).toMatchSnapshot()
+  })
+
 
 })

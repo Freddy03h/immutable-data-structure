@@ -1,0 +1,108 @@
+{
+  "id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
+  "title": "Platinum End",
+  "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+  "possessions_count": 1024,
+  "tasks": [
+    {
+      "id": "4b1d117d-063b-4a08-b6d7-2f3d252b2a81",
+      "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
+      "author_id": "f06df71d-7bb3-4a4c-aec0-638f53aa43a8",
+      "job_id": "37fb2477-ec0d-4ffc-9d3b-4189c2d01629",
+      "author": {
+        "id": "f06df71d-7bb3-4a4c-aec0-638f53aa43a8",
+        "name": "Obata",
+        "first_name": "Takeshi"
+      }
+    },
+    {
+      "id": "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
+      "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
+      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+      "job_id": "bf39f3fe-ce75-48b0-b557-877da935633b",
+      "author": {
+        "id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+        "name": "Ōba",
+        "first_name": "Tsugumi"
+      }
+    }
+  ],
+  "editions": [
+    {
+      "id": "73173187-5965-451c-adbe-84e3e719abc0",
+      "title": "Edition simple",
+      "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
+      "publisher_id": "122e0ec3-f072-4c5d-b40d-3eba4a82fe1e",
+      "volumes": [
+        {
+          "id": "27e50b0a-785e-4298-af2f-ae492c57c8a6",
+          "title": "Tome 6",
+          "number": 6,
+          "date": "2017-09-20",
+          "img": "",
+          "edition_id": "73173187-5965-451c-adbe-84e3e719abc0",
+          "isbn": "9782820329011"
+        },
+        {
+          "id": "f6f21458-e707-40ba-b9ec-f7f28d7c6343",
+          "title": "Tome 5",
+          "number": 5,
+          "date": "2017-05-31",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/61CV%2BQwDT7L.jpg",
+          "edition_id": "73173187-5965-451c-adbe-84e3e719abc0",
+          "isbn": "9782820328533"
+        },
+        {
+          "id": "06fe038b-8c0d-4767-9167-ae3ca9bc3067",
+          "title": "Tome 4",
+          "number": 4,
+          "date": "2017-03-08",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51tKK5n%2B-3L.jpg",
+          "edition_id": "73173187-5965-451c-adbe-84e3e719abc0",
+          "isbn": "9782820328175"
+        },
+        {
+          "id": "7c0ad1a9-4a80-4710-b11b-eed249456924",
+          "title": "Tome 3",
+          "number": 3,
+          "date": "2016-11-23",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51jAjenb0EL.jpg",
+          "edition_id": "73173187-5965-451c-adbe-84e3e719abc0",
+          "isbn": "9782820325402"
+        },
+        {
+          "id": "975e5e39-8a47-4e0c-9a60-4a6256163257",
+          "title": "Tome 2",
+          "number": 2,
+          "date": "2016-09-07",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51sgTWp8W-L.jpg",
+          "edition_id": "73173187-5965-451c-adbe-84e3e719abc0",
+          "isbn": "9782820324948"
+        },
+        {
+          "id": "04754705-044e-4292-8ed2-eee50ee91d2d",
+          "title": "Tome 1",
+          "number": 1,
+          "date": "2016-05-25",
+          "img": "https://images-eu.ssl-images-amazon.com/images/I/51TgELYk1WL.jpg",
+          "edition_id": "73173187-5965-451c-adbe-84e3e719abc0",
+          "isbn": "9782820324603"
+        }
+      ]
+    }
+  ],
+  "kinds": [
+    {
+      "id": "d5a3385a-cfcd-45f6-8f82-0c80956b084d",
+      "title": "Shōnen"
+    },
+    {
+      "id": "9d6a131c-4b4e-4cf6-a9aa-de78087d672d",
+      "title": "Fantastique"
+    },
+    {
+      "id": "acd6bec9-507d-46ab-a1de-f18f8b8ca83c",
+      "title": "Drame"
+    }
+  ]
+}

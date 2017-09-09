@@ -27,3 +27,11 @@ export const VolumeRecord = Immutable.Record({
   content: null,
 })
 export const volumeForeignKeys = ['edition_id']
+
+export const TaskRecord = Immutable.Record({
+  id: null,
+  author_id: null,
+  job_id: null,
+  series_id: null,
+})
+export const taskForeignKeys = ['author_id', 'job_id', 'series_id']

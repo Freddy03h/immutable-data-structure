@@ -77,7 +77,7 @@ export const updateRecord = (store, Record, newData, foreignKeys = [], primaryKe
     .withMutations((collection) => {
       foreignKeys.forEach(
         (foreignKey) => {
-          if(oldData) {
+          if(oldData && oldData.get(foreignKey) !== newData.get(foreignKey)) {
             collection.updateIn(['relations', foreignKey, oldData.get(foreignKey)], (item_ids) => item_ids && item_ids.remove(id))
           }
           if(newData.get(foreignKey)) {
@@ -125,8 +125,7 @@ export const mergeRecords = (updateFunc, deleteFunc, store, listData, primaryKey
   let keysToRemove = null
 
   if(completeKeys) {
-    const actuelKeys = listData ? listData.map((mapItem) => mapItem.get(primaryKey)).toSet() : Immutable.OrderedSet()
-
+    const actuelKeys = listData ? listData.map((mapItem) => mapItem.get(primaryKey)).toOrderedSet() : Immutable.OrderedSet()
     keysToRemove = completeKeys.subtract(actuelKeys)
   }
 
@@ -159,6 +158,7 @@ export const createMergeRecords = (Record, foreignKeys = [], primaryKey = 'id') 
       completeKeys = store.get('data').keySeq().toSet()
     } else if (completeKeysPath) {
       completeKeys = store.getIn(['relations', ...completeKeysPath])
+      store = store.updateIn(['relations', ...completeKeysPath], () => Immutable.OrderedSet())
     }
 
     return mergeRecords(updateFunc, deleteFunc, store, listData, primaryKey, completeKeys)
