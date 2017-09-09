@@ -154,14 +154,24 @@ export const createMergeRecords = (Record, foreignKeys = [], primaryKey = 'id') 
   const deleteFunc = createDeleteRecord(foreignKeys)
   return (store, listData, isComplete = false, completeKeysPath = null) => {
     let completeKeys
+    let oldStore = store
     if(isComplete && !completeKeysPath) {
       completeKeys = store.get('data').keySeq().toSet()
+      // store = store.updateIn(['relations'], () => initialState.get('relations'))
+      store = store.update('relations', (r) => r.clear()).update('data', (d) => d.clear())
     } else if (completeKeysPath) {
       completeKeys = store.getIn(['relations', ...completeKeysPath])
       store = store.updateIn(['relations', ...completeKeysPath], () => Immutable.OrderedSet())
     }
 
-    return mergeRecords(updateFunc, deleteFunc, store, listData, primaryKey, completeKeys)
+    let newStore = mergeRecords(updateFunc, deleteFunc, store, listData, primaryKey, completeKeys)
+
+    if(isComplete && !completeKeysPath) {
+      const oldStoreFiltred = oldStore.get('data').filter((s) => newStore.get('data').has(s.get('id')))
+      newStore = mergeRecords(updateFunc, deleteFunc, newStore, oldStoreFiltred, primaryKey)
+    }
+
+    return newStore
   }
 }
 
