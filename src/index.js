@@ -46,13 +46,17 @@ export const getDataByTwoForeignId = (store, moduleName, foreignIdKey1, id1, for
   return listToMapWithKey(listRelatedItemIds, key)
 }
 
-export const getDataByForeignIds = (store, moduleName, foreignIdKey, foreignIds, key = 'id') => {
-  const relatedItemIds = foreignIds
+export const getIdsByForeignIds = (store, moduleName, foreignIdKey, foreignIds) => {
+  return foreignIds
     ? foreignIds.reduce((accumulator, otherItemId) => {
         const itemIds = getForeignIds(store, moduleName, foreignIdKey, otherItemId)
         return itemIds ? accumulator.union(itemIds) : accumulator
       }, Immutable.OrderedSet())
     : Immutable.OrderedSet()
+}
+
+export const getDataByForeignIds = (store, moduleName, foreignIdKey, foreignIds, key = 'id') => {
+  const relatedItemIds = getIdsByForeignIds(store, moduleName, foreignIdKey, foreignIds)
 
   const listRelatedItemIds = relatedItemIds
     ? relatedItemIds.map((itemId) => getDataById(store, moduleName, itemId)).toList()
