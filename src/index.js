@@ -219,7 +219,7 @@ export const stateFromStorage = (store, Record, moduleData, foreignKeys = [], pr
   return store
     .updateIn(['data'], (data) => {
       return data.merge(
-        module.get('data').map((item) => new Record(item))
+        module.get('data').map((item) => [item.get(primaryKey), new Record(item)])
       )
     })
     .updateIn(['relations'], (relations) => {
@@ -232,5 +232,5 @@ export const stateFromStorage = (store, Record, moduleData, foreignKeys = [], pr
 }
 
 export const storageFromState = (store) => {
-  return store.toJS()
+  return store.updateIn(['data'], (data) => data.toList()).toJS()
 }
