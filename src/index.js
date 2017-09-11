@@ -210,3 +210,27 @@ export const createMergeCompleteListsRecords = (mergeFunc, entitiesKey, foreignK
     return mergeCompleteListsRecords(mergeFunc, store, listData, entitiesKey, foreignKey, keyDataPrimary)
   }
 }
+
+///////////
+
+export const stateFromStorage = (store, Record, moduleData, foreignKeys = [], primaryKey = 'id') => {
+  const module = Immutable.fromJS(moduleData)
+
+  return store
+    .updateIn(['data'], (data) => {
+      return data.merge(
+        module.get('data').map((item) => new Record(item))
+      )
+    })
+    .updateIn(['relations'], (relations) => {
+      return relations.merge(
+        module.get('relations').map((relation) =>{
+          return relation.map((fk) => fk.toOrderedSet())
+        })
+      )
+    })
+}
+
+export const storageFromState = (store) => {
+  return store.toJS()
+}
