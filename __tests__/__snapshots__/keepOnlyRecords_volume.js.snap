@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`keepOnlyRecords volume big store 1`] = `
+Immutable.Map {
+  data: Immutable.Map {
+    ec23f826-05bc-4bfc-b3e1-b2227e782ce9: Object {
+      "content": null,
+      "date": "2010-07-02",
+      "edition_id": "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
+      "id": "ec23f826-05bc-4bfc-b3e1-b2227e782ce9",
+      "img": "https://images-eu.ssl-images-amazon.com/images/I/51ihjP9KCzL.jpg",
+      "isbn": "9782505008262",
+      "number": 1,
+      "title": "Tome 1",
+    },
+    8d5329c8-2ad5-4713-8961-84f2e42a61c6: Object {
+      "content": null,
+      "date": "2012-03-08",
+      "edition_id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+      "id": "8d5329c8-2ad5-4713-8961-84f2e42a61c6",
+      "img": "https://images-eu.ssl-images-amazon.com/images/I/51MOHY8mkuL.jpg",
+      "isbn": "9782351427552",
+      "number": 1,
+      "title": "Tome I (1-2-3)",
+    },
+    58715dcb-ce62-4b8c-a6b0-6412310b12ff: Object {
+      "content": null,
+      "date": "2006-11-09",
+      "edition_id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
+      "id": "58715dcb-ce62-4b8c-a6b0-6412310b12ff",
+      "img": "https://images-eu.ssl-images-amazon.com/images/I/51N7A347E8L.jpg",
+      "isbn": "9782351420492",
+      "number": 9,
+      "title": "Tome 9",
+    },
+  },
+  relations: Immutable.Map {
+    edition_id: Immutable.Map {
+      d42c9391-c92f-4485-a772-8df06d70ed17: Immutable.OrderedSet [
+        "8d5329c8-2ad5-4713-8961-84f2e42a61c6",
+      ],
+      ffdf56ae-058d-49c6-80c6-336471a73dcc: Immutable.OrderedSet [
+        "58715dcb-ce62-4b8c-a6b0-6412310b12ff",
+      ],
+      8413f439-9bdd-42a2-bd40-4b0f6118dc8d: Immutable.OrderedSet [
+        "ec23f826-05bc-4bfc-b3e1-b2227e782ce9",
+      ],
+    },
+  },
+}
+`;

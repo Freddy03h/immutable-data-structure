@@ -121,6 +121,22 @@ export const createDeleteRecord = (foreignKeys = []) => {
 
 //////////
 
+export const keepOnlyRecords = (store, idsSet) => {
+  return store
+    .updateIn(['data'], (data) =>
+      data.filter((datum, id) => idsSet.has(id))
+    )
+    .updateIn(['relations'], (relations) =>
+      relations.map((fkIds) =>
+        fkIds
+          .map((fk) => fk.intersect(idsSet))
+          .filter((fk) => fk.size)
+      )
+    )
+}
+
+//////////
+
 export const mergeRecords = (updateFunc, deleteFunc, store, listData, primaryKey = 'id', completeKeys = null) => {
   let keysToRemove = null
 
