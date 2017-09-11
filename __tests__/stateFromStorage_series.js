@@ -2,7 +2,7 @@ import Immutable from 'immutable'
 import {
   initialState,
   createMergeRecords, createUpdateRecord, createReplaceRecords,
-  stateFromStorage, storageFromState,
+  createStateFromStorage, storageFromState,
 } from '../src/index'
 
 import seriesJSON from '../__fixtures__/series.json'
@@ -12,8 +12,8 @@ import { SerieRecord, serieForeignKeys } from '../__fixtures__/records'
 
 const seriesInitialState = initialState.set('data', Immutable.OrderedMap())
 const updateSerieRecord = createUpdateRecord(SerieRecord, serieForeignKeys)
-const mergeSeriesRecords = createMergeRecords(SerieRecord, serieForeignKeys)
 const replaceSeriesRecords = createReplaceRecords(SerieRecord, serieForeignKeys)
+const stateSeriesFromStorage = createStateFromStorage(SerieRecord, serieForeignKeys)
 
 const series = Immutable.fromJS(seriesJSON)
 const serie1 = Immutable.fromJS(serieDeathNoteJSON)
@@ -27,7 +27,7 @@ describe('stateFromStorage series', () => {
     const store3 = updateSerieRecord(store2, serie2)
 
     const localStorage = storageFromState(store3)
-    const newStore = stateFromStorage(seriesInitialState, SerieRecord, localStorage, serieForeignKeys)
+    const newStore = stateSeriesFromStorage(seriesInitialState, localStorage)
 
     expect(
       newStore

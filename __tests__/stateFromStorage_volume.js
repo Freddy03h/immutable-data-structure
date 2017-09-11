@@ -2,7 +2,7 @@ import Immutable from 'immutable'
 import {
   initialState,
   createMergeRecords, createMergeCompleteListsRecords,
-  stateFromStorage, storageFromState,
+  createStateFromStorage, storageFromState,
 } from '../src/index'
 
 import serieDeathNoteJSON from '../__fixtures__/serie_death_note.json'
@@ -12,6 +12,7 @@ import { VolumeRecord, volumeForeignKeys } from '../__fixtures__/records'
 
 const mergeVolumeRecords = createMergeRecords(VolumeRecord, volumeForeignKeys)
 const mergeVolumeRecordsFromSeries = createMergeCompleteListsRecords(mergeVolumeRecords, 'volumes', 'edition_id')
+const stateVolumesFromStorage = createStateFromStorage(VolumeRecord, volumeForeignKeys)
 
 const serie1 = Immutable.fromJS(serieDeathNoteJSON)
 const serie2 = Immutable.fromJS(serieFullmetalAlchemistJSON)
@@ -29,7 +30,7 @@ describe('stateFromStorage volume', () => {
     const store3 = mergeVolumeRecordsFromSeries(store2, editionsAuthor)
 
     const localStorage = storageFromState(store3)
-    const newStore = stateFromStorage(initialState, VolumeRecord, localStorage, volumeForeignKeys)
+    const newStore = stateVolumesFromStorage(initialState, localStorage)
 
     expect(
       newStore

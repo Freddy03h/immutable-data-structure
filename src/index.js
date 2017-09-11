@@ -231,6 +231,12 @@ export const stateFromStorage = (store, Record, moduleData, foreignKeys = [], pr
     })
 }
 
+export const createStateFromStorage = (Record, foreignKeys = [], primaryKey = 'id') => {
+  return (store, moduleData) => {
+    return stateFromStorage(store, Record, moduleData, foreignKeys, primaryKey)
+  }
+}
+
 export const storageFromState = (store) => {
   return store.updateIn(['data'], (data) => data.toList()).toJS()
 }
