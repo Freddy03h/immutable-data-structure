@@ -18,6 +18,12 @@ export const getDataById = (store, moduleName, id) => {
   return store.getIn([moduleName, 'data', id])
 }
 
+export const getDataByIds = (store, moduleName, idsSet, key = 'id') => {
+  const idsList = Immutable.List(idsSet)
+  const tupleItemIds = idsList.map(getDataByIdAndReturnTuple(store, moduleName, key))
+  return Immutable.Map(tupleItemIds)
+}
+
 export const getDatas = (store, moduleName) => {
   return store.getIn([moduleName, 'data'])
 }
@@ -27,11 +33,7 @@ export const getForeignIds = (store, moduleName, foreignIdKey, id) => {
 }
 
 export const getDataByForeignId = (store, moduleName, foreignIdKey, foreignId, key = 'id') => {
-  const relatedItemIds = Immutable.List(getForeignIds(store, moduleName, foreignIdKey, foreignId))
-
-  const tupleRelatedItemIds = relatedItemIds.map(getDataByIdAndReturnTuple(store, moduleName, key))
-
-  return Immutable.Map(tupleRelatedItemIds)
+  return getDataByIds(store, moduleName, getForeignIds(store, moduleName, foreignIdKey, foreignId))
 }
 
 export const getIdsByTwoForeignId = (store, moduleName, foreignIdKey1, id1, foreignIdKey2, id2) => {
@@ -42,11 +44,7 @@ export const getIdsByTwoForeignId = (store, moduleName, foreignIdKey1, id1, fore
 }
 
 export const getDataByTwoForeignId = (store, moduleName, foreignIdKey1, id1, foreignIdKey2, id2, key = 'id') => {
-  const relatedItemIds = Immutable.List(getIdsByTwoForeignId(store, moduleName, foreignIdKey1, id1, foreignIdKey2, id2))
-
-  const tupleRelatedItemIds = relatedItemIds.map(getDataByIdAndReturnTuple(store, moduleName, key))
-
-  return Immutable.Map(tupleRelatedItemIds)
+  return getDataByIds(store, moduleName, getIdsByTwoForeignId(store, moduleName, foreignIdKey1, id1, foreignIdKey2, id2))
 }
 
 export const getIdsByForeignIds = (store, moduleName, foreignIdKey, foreignIds) => {
@@ -59,11 +57,7 @@ export const getIdsByForeignIds = (store, moduleName, foreignIdKey, foreignIds) 
 }
 
 export const getDataByForeignIds = (store, moduleName, foreignIdKey, foreignIds, key = 'id') => {
-  const relatedItemIds = Immutable.List(getIdsByForeignIds(store, moduleName, foreignIdKey, foreignIds))
-
-  const tupleRelatedItemIds = relatedItemIds.map(getDataByIdAndReturnTuple(store, moduleName, key))
-
-  return Immutable.Map(tupleRelatedItemIds)
+  return getDataByIds(store, moduleName, getIdsByForeignIds(store, moduleName, foreignIdKey, foreignIds))
 }
 
 export const getDataByForeignIdThroughOtherForeignId = (store, moduleName, foreignIdKey, otherModuleName, otherForeignIdKey, otherForeignId, key = 'id') => {
