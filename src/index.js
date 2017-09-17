@@ -72,7 +72,7 @@ export const updateRecord = (store, Record, newData, foreignKeys = [], primaryKe
   const id = newData.get(primaryKey)
   const oldData = store.getIn(['data', id])
 
-  return store.updateIn(['data', id], new Record(), (record) => record.merge(newData))
+  return store.updateIn(['data', id], (record) => record ? record.merge(newData) : new Record(newData))
     .withMutations((collection) => {
       foreignKeys.forEach(
         (foreignKey) => {
@@ -181,29 +181,35 @@ export const createMergeRecords = (Record, foreignKeys = [], primaryKey = 'id') 
 //////////
 
 // To use only if listData is the entire list AND want to keep order, otherwise use "mergeRecords"
-export const replaceRecords = (updateFunc, store, listData, primaryKey = 'id') => {
-  return store
-    .update('relations', (r) => r.clear())
-    .update('data', (d) => d.clear())
-    .withMutations((collection) => {
-      if(listData) {
-        listData.forEach(
-          (mapItem) => {
-            const currentItemInState = store.getIn(['data', mapItem.get(primaryKey)])
-            if (currentItemInState) {
-              updateFunc(collection, currentItemInState)
-            }
-            updateFunc(collection, mapItem)
-          }
-        )
-      }
+export const replaceRecords = (Record, foreignKeys = [], store, listData, primaryKey = 'id') => {
+  return store.withMutations((state) => {
+
+    state.updateIn(['data'], (data) => {
+      return data.clear().withMutations((collection) => {
+        listData.forEach((item) => {
+          const currentItemInState = data.get(item.get(primaryKey))
+
+          collection.update(item.get(primaryKey), () => new Record(currentItemInState ? currentItemInState.merge(item) : item))
+        })
+      })
     })
+
+    foreignKeys.forEach((fk) => {
+      state.updateIn(['relations', fk], Immutable.Map(), (relation) => {
+        return relation.clear().withMutations((collection) => {
+          listData.forEach((item) => {
+            collection.update(item.get(fk), new Immutable.OrderedSet(), (item_ids) => item_ids.add(item.get(primaryKey)))
+          })
+        })
+      })
+    })
+
+  })
 }
 
 export const createReplaceRecords = (Record, foreignKeys = [], primaryKey = 'id') => {
-  const updateFunc = createUpdateRecord(Record, foreignKeys, primaryKey)
   return (store, listData) => {
-    return replaceRecords(updateFunc, store, listData, primaryKey)
+    return replaceRecords(Record, foreignKeys, store, listData, primaryKey)
   }
 }
 
