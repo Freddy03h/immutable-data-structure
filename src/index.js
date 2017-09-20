@@ -1,5 +1,8 @@
 import Immutable from 'immutable'
 
+export * from './async'
+
+
 export const initialState = Immutable.Map({
   data: Immutable.Map(),
   relations: Immutable.Map(),
