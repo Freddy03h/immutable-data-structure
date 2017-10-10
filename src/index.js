@@ -12,7 +12,7 @@ export const initialState = Immutable.Map({
 
 const getDataByIdAndReturnTuple = (store, moduleName, key) => (itemId) => {
   const item = getDataById(store, moduleName, itemId)
-  return [item.get(key), item]
+  return item && [item.get(key), item]
 }
 
 //////////
