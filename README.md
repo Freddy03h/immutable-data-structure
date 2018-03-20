@@ -6,22 +6,22 @@ Give me some feedback to improve the API and the Doc
 
 ---
 
-Immutable-Data-Structure is a project to help you **normalize** and **merge** your application's datas using **Immutable.JS** objects.
+Immutable-Data-Structure is a project to help you **normalize** and **merge** your application's data using **Immutable.JS** objects.
 
-It very usefull to manage your **Redux** store, it is created for this purpose, but redux isn't a dependancie of this project so you basically can use it elsewhere.
+It is useful to help manage your **Redux** store, it is created for this purpose, but Redux isn't a dependency of this project so you basically can use it elsewhere.
 
-It only provide functions :
+It only provides functions :
 
 * Writing functions to use inside your reducers (merge, update, delete, … )
-* Reading functions to use inside your mapStateToProps (selectors)
+* Reading functions to use inside your `mapStateToProps` (selectors)
 
 ## Structure of the store
 
-Assuming your already knwo why it's important to normalize your data and to be ressource oriented. Here is an example of a manga's `series` reducer store.
+Assuming your already know why it's important to normalize your data and to be resource oriented. Here is an example of a manga's `series` reducer store.
 
 The **Immutable Record** look like :
 
-```
+```javascript
 const SerieRecord = Immutable.Record({
   id: null,
   title: null,
@@ -30,7 +30,7 @@ const SerieRecord = Immutable.Record({
 ```
 And we also declare an array of all foreign keys for the Record :
 
-```
+```javascript
 const serieForeignKeys = ['type_id']
 ```
 
@@ -97,27 +97,27 @@ Immutable.Map {
 
 ### Data
 
-`data` store all the ressources with a quick access by `id`
+`data` stores all the resources with a quick access by `id`
 
 ### Relations
 
-`relations` store all the foreign keys relations like a relational database. It provide a fast access to ressource based on a foreign key to avoid doing a `filter` direclty on the `data` object that can be really huge and slow.
+`relations` store all the foreign keys relations like a relational database. It provides a fast access to resources based on a foreign key to avoid doing a `filter` directly on the `data` object that can be really huge and slow.
 
 ## Selectors
 
 If you already know `Immutable.JS` you know how to access data :
 
-```
+```javascript
 state.getIn(['series', 'data', 'd1a38f41-2ac9-40cf-aa17-aeac9697e1c8'])
 ```
 
-**But, it's not recommanded !** We provide selectors to easily access datas and can change the structure internally without breaking / migrating your code.
+**But, it's not recommended !** We provide selectors to easily access data and can change the structure internally without breaking / migrating your code.
 
 ### getDataById
 
 To get a Record knowing it's ID.
 
-```
+```javascript
 import { getDataById } from `immutable-data-structure`
 
 // ....
@@ -131,7 +131,7 @@ const serie = getDataById(state, 'series', seriesID)
 
 To get a **List** (Immutable.List) of Records by giving a **Set** (Immutable.Set) of IDs.
 
-```
+```javascript
 const narutoSeriesIDs = Immutable.Set(['d1a38f41-2ac9-40cf-aa17-aeac9697e1c8', 'f0db2df6-dc0c-48cd-b3c4-88dd350c9cb0'])
 
 const narutoSeries = getDataByIds(state, 'series', narutoSeriesIDs)
@@ -141,27 +141,27 @@ const narutoSeries = getDataByIds(state, 'series', narutoSeriesIDs)
 
 To get the **OrderedSet** (Immutable.OrderedSet) of IDs by giving a ForeignKeys ID.
 
-```
+```javascript
 const manfraTypeID = '3c009f18-811d-4b07-8dde-8249e422ec9e'
 
 const manfraSeriesIDs = getForeignIds(state, 'series', 'type_id', manfraTypeID)
 ```
 
-It's the equivalent of the **not recommanded** Immutable.JS way :
+It's the equivalent of the **not recommended** Immutable.JS way :
 
-```
+```javascript
 state.getIn(['series', 'relations', 'type_id', '3c009f18-811d-4b07-8dde-8249e422ec9e'])
 ```
 
 ### getDataByForeignId
 
-In many cases, `getForeignIds` is enought to use in the `mapStateToProps` of a list component. It's recommanded to `.map` IDs in the list and then `connect` each row by using `getDataById ` inside the `mapStateToProps` of the row, for performance reason.
+In many cases, `getForeignIds` is enough to use in the `mapStateToProps` of a list component. It's recommended to `.map` IDs in the list and then `connect` each row by using `getDataById ` inside the `mapStateToProps` of the row, for performance reason.
 
-But sometimes, you need to order / filter / … the list based on Records attributes. So we need to get all the datas.
+But sometimes, you need to order / filter / … the list based on Records attributes. So we need to get all the data.
 
 `getDataByForeignId` return a **List** (Immutable.List) of Records by giving a ForeignKeys ID.
 
-```
+```javascript
 const manfraTypeID = '3c009f18-811d-4b07-8dde-8249e422ec9e'
 
 const manfraSeries = getDataByForeignId(state, 'series', 'type_id', manfraTypeID)
@@ -169,7 +169,7 @@ const manfraSeries = getDataByForeignId(state, 'series', 'type_id', manfraTypeID
 
 You can think of this function like an easy version of something like this :
 
-```
+```javascript
 const manfraTypeID = '3c009f18-811d-4b07-8dde-8249e422ec9e'
 
 const manfraSeriesIDs = getForeignIds(state, 'series', 'type_id', manfraTypeID)
@@ -183,17 +183,17 @@ Functions to use in yours reducers.
 
 ### updateRecord
 
-Function to Create or Update one entity in the store. It automatically update `data` and `relations` to keep a consistance state.
+Function to Create or Update one entity in the store. It automatically update `data` and `relations` to keep a consistent state.
 
 For example inside a reducer :
 
-```
+```javascript
 case FETCH_SERIE_SUCCESS: {
-	const apiResponse = Immutable.fromJS(action.jsonResponse)
-	
-	const newStore = updateRecord(store, SerieRecord, apiResponse, serieForeignKeys)
-	
-	return newStore
+  const apiResponse = Immutable.fromJS(action.jsonResponse)
+
+  const newStore = updateRecord(store, SerieRecord, apiResponse, serieForeignKeys)
+
+  return newStore
 }
 ```
 
@@ -201,10 +201,10 @@ case FETCH_SERIE_SUCCESS: {
 
 Function to Delete one entity in the store.
 
-```
+```javascript
 case DELETE_SERIE_SUCCESS: {
-	const newStore = deleteRecord(store, action.seriesIDToDelete, serieForeignKeys)
-	
-	return newStore
+  const newStore = deleteRecord(store, action.seriesIDToDelete, serieForeignKeys)
+
+  return newStore
 }
 ```
