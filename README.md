@@ -39,56 +39,56 @@ The point of this project is to produce and maintain a structure like this :
 ```
 Immutable.Map {
   data: Immutable.Map {
-    d1a38f41-2ac9-40cf-aa17-aeac9697e1c8: Object {
-      "id": "d1a38f41-2ac9-40cf-aa17-aeac9697e1c8",
+    d1a38f41: Object {
+      "id": "d1a38f41",
       "title": "Naruto",
-      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+      "type_id": "106f524e",
     },
-    f0db2df6-dc0c-48cd-b3c4-88dd350c9cb0: Object {
-      "id": "f0db2df6-dc0c-48cd-b3c4-88dd350c9cb0",
+    f0db2df6: Object {
+      "id": "f0db2df6",
       "title": "Naruto : Les Romans",
-      "type_id": "bb3d92a9-020a-4d3f-adec-77bebe9980db",
+      "type_id": "bb3d92a9",
     },
-    a02cf154-af6c-4f08-9a7a-32f7bc229ac8: Object {
-      "id": "a02cf154-af6c-4f08-9a7a-32f7bc229ac8",
+    a02cf154: Object {
+      "id": "a02cf154",
       "title": "One Piece",
-      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+      "type_id": "106f524e",
     },
-    f59ab8de-2c3a-4bf2-a501-b844599646be: Object {
-      "id": "f59ab8de-2c3a-4bf2-a501-b844599646be",
+    f59ab8de: Object {
+      "id": "f59ab8de",
       "title": "Radiant",
-      "type_id": "3c009f18-811d-4b07-8dde-8249e422ec9e",
+      "type_id": "3c009f18",
     },
-    96138837-ef12-4a8f-869a-ea745047b41f: Object {
-      "id": "96138837-ef12-4a8f-869a-ea745047b41f",
+    96138837: Object {
+      "id": "96138837",
       "title": "Dreamland",
-      "type_id": "3c009f18-811d-4b07-8dde-8249e422ec9e",
+      "type_id": "3c009f18",
     },
-    b9652346-95db-45ef-982b-de9f9d3ac01f: Object {
-      "id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
+    b9652346: Object {
+      "id": "b9652346",
       "title": "Fullmetal Alchemist",
-      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+      "type_id": "106f524e",
     },
-    940629b6-a0df-4bd2-970d-b75d19336793: Object {
-      "id": "940629b6-a0df-4bd2-970d-b75d19336793",
+    940629b6: Object {
+      "id": "940629b6",
       "title": "Dragon Ball",
-      "type_id": "106f524e-7283-44b8-aa84-25e9a7fb1f7d",
+      "type_id": "106f524e",
     },
   },
   relations: Immutable.Map {
     type_id: Immutable.Map {
-      106f524e-7283-44b8-aa84-25e9a7fb1f7d: Immutable.OrderedSet [
-        "a02cf154-af6c-4f08-9a7a-32f7bc229ac8",
-        "d1a38f41-2ac9-40cf-aa17-aeac9697e1c8",
-        "940629b6-a0df-4bd2-970d-b75d19336793",
-        "b9652346-95db-45ef-982b-de9f9d3ac01f",
+      106f524e: Immutable.OrderedSet [
+        "a02cf154",
+        "d1a38f41",
+        "940629b6",
+        "b9652346",
       ],
-      3c009f18-811d-4b07-8dde-8249e422ec9e: Immutable.OrderedSet [
-        "96138837-ef12-4a8f-869a-ea745047b41f",
-        "f59ab8de-2c3a-4bf2-a501-b844599646be",
+      3c009f18: Immutable.OrderedSet [
+        "96138837",
+        "f59ab8de",
       ],
-      bb3d92a9-020a-4d3f-adec-77bebe9980db: Immutable.OrderedSet [
-        "f0db2df6-dc0c-48cd-b3c4-88dd350c9cb0",
+      bb3d92a9: Immutable.OrderedSet [
+        "f0db2df6",
       ],
     },
   },
@@ -108,7 +108,7 @@ Immutable.Map {
 If you already know `Immutable.JS` you know how to access data :
 
 ```javascript
-state.getIn(['series', 'data', 'd1a38f41-2ac9-40cf-aa17-aeac9697e1c8'])
+state.getIn(['series', 'data', 'd1a38f41'])
 ```
 
 **But, it's not recommended !** We provide selectors to easily access data and can change the structure internally without breaking / migrating your code.
@@ -123,7 +123,7 @@ import { getDataById } from `immutable-data-structure`
 // ....
 
 // inside mapStateToProps
-const seriesID = 'd1a38f41-2ac9-40cf-aa17-aeac9697e1c8'
+const seriesID = 'd1a38f41'
 const serie = getDataById(state, 'series', seriesID)
 ```
 
@@ -132,7 +132,7 @@ const serie = getDataById(state, 'series', seriesID)
 To get a **List** (Immutable.List) of Records by giving a **Set** (Immutable.Set) of IDs.
 
 ```javascript
-const narutoSeriesIDs = Immutable.Set(['d1a38f41-2ac9-40cf-aa17-aeac9697e1c8', 'f0db2df6-dc0c-48cd-b3c4-88dd350c9cb0'])
+const narutoSeriesIDs = Immutable.Set(['d1a38f41', 'f0db2df6'])
 
 const narutoSeries = getDataByIds(state, 'series', narutoSeriesIDs)
 ```
@@ -142,7 +142,7 @@ const narutoSeries = getDataByIds(state, 'series', narutoSeriesIDs)
 To get the **OrderedSet** (Immutable.OrderedSet) of IDs by giving a ForeignKeys ID.
 
 ```javascript
-const manfraTypeID = '3c009f18-811d-4b07-8dde-8249e422ec9e'
+const manfraTypeID = '3c009f18'
 
 const manfraSeriesIDs = getForeignIds(state, 'series', 'type_id', manfraTypeID)
 ```
@@ -150,7 +150,7 @@ const manfraSeriesIDs = getForeignIds(state, 'series', 'type_id', manfraTypeID)
 It's the equivalent of the **not recommended** Immutable.JS way :
 
 ```javascript
-state.getIn(['series', 'relations', 'type_id', '3c009f18-811d-4b07-8dde-8249e422ec9e'])
+state.getIn(['series', 'relations', 'type_id', '3c009f18'])
 ```
 
 ### getDataByForeignId
@@ -162,7 +162,7 @@ But sometimes, you need to order / filter / … the list based on Records attrib
 `getDataByForeignId` return a **List** (Immutable.List) of Records by giving a ForeignKeys ID.
 
 ```javascript
-const manfraTypeID = '3c009f18-811d-4b07-8dde-8249e422ec9e'
+const manfraTypeID = '3c009f18'
 
 const manfraSeries = getDataByForeignId(state, 'series', 'type_id', manfraTypeID)
 ```
@@ -170,7 +170,7 @@ const manfraSeries = getDataByForeignId(state, 'series', 'type_id', manfraTypeID
 You can think of this function like an easy version of something like this :
 
 ```javascript
-const manfraTypeID = '3c009f18-811d-4b07-8dde-8249e422ec9e'
+const manfraTypeID = '3c009f18'
 
 const manfraSeriesIDs = getForeignIds(state, 'series', 'type_id', manfraTypeID)
 
