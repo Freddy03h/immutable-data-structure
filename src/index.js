@@ -72,6 +72,9 @@ export const getDataByForeignIdThroughOtherForeignId = (store, moduleName, forei
 //////////
 
 export const updateRecord = (store, Record, newData, foreignKeys = [], primaryKey = 'id') => {
+  if(!Immutable.isImmutable(newData)) {
+    return store
+  }
   const id = newData.get(primaryKey)
   const oldData = store.getIn(['data', id])
 
