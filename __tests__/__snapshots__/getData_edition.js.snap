@@ -9,17 +9,17 @@ Immutable.OrderedSet [
 
 exports[`getData edition get edition with series_id and publisher_id 1`] = `
 Immutable.Map {
-  908612fd-1cc7-4780-aea4-63d3ac04c6bd: Object {
+  "908612fd-1cc7-4780-aea4-63d3ac04c6bd": Immutable.Record {
     "id": "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
-    "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
-    "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
     "title": "Black Edition",
-  },
-  5482eba9-2773-40d8-82f7-1870b1b2a3e9: Object {
-    "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
     "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
     "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+  },
+  "5482eba9-2773-40d8-82f7-1870b1b2a3e9": Immutable.Record {
+    "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
     "title": "Edition simple",
+    "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+    "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
   },
 }
 `;

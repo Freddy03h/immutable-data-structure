@@ -2,15 +2,15 @@
   "env": {
     // For RN example development
     "development": {
-      "presets": ["react-native"]
+      "presets": ["module:metro-react-native-babel-preset"]
     },
     // For Jest
     "test": {
-      "presets": ["react-native"]
+      "presets": ["module:metro-react-native-babel-preset"]
     },
     // For publishing to NPM for RN
     "publish-rn": {
-      "presets": ["react-native-syntax"]
+      "presets": ["module:metro-react-native-babel-preset"]
     },
     // For publishing to NPM for web
     "publish-web": {

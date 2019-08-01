@@ -2,50 +2,50 @@
 
 exports[`mergeRecords edition one author with 3 series and many editions 1`] = `
 Immutable.Map {
-  data: Immutable.Map {
-    73173187-5965-451c-adbe-84e3e719abc0: Object {
+  "data": Immutable.Map {
+    "73173187-5965-451c-adbe-84e3e719abc0": Immutable.Record {
       "id": "73173187-5965-451c-adbe-84e3e719abc0",
+      "title": "Edition simple",
       "publisher_id": "122e0ec3-f072-4c5d-b40d-3eba4a82fe1e",
       "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
-      "title": "Edition simple",
     },
-    8413f439-9bdd-42a2-bd40-4b0f6118dc8d: Object {
+    "8413f439-9bdd-42a2-bd40-4b0f6118dc8d": Immutable.Record {
       "id": "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
+      "title": "Edition simple",
       "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
       "series_id": "277484f9-d839-4b44-9f43-0743e6db540f",
-      "title": "Edition simple",
     },
-    908612fd-1cc7-4780-aea4-63d3ac04c6bd: Object {
+    "908612fd-1cc7-4780-aea4-63d3ac04c6bd": Immutable.Record {
       "id": "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
-      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
-      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
       "title": "Black Edition",
-    },
-    5482eba9-2773-40d8-82f7-1870b1b2a3e9: Object {
-      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
       "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+    },
+    "5482eba9-2773-40d8-82f7-1870b1b2a3e9": Immutable.Record {
+      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       "title": "Edition simple",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
     },
   },
-  relations: Immutable.Map {
-    series_id: Immutable.Map {
-      fc34ad95-27cf-4cba-aafc-e9c37de532b4: Immutable.OrderedSet [
+  "relations": Immutable.Map {
+    "series_id": Immutable.Map {
+      "fc34ad95-27cf-4cba-aafc-e9c37de532b4": Immutable.OrderedSet [
         "73173187-5965-451c-adbe-84e3e719abc0",
       ],
-      277484f9-d839-4b44-9f43-0743e6db540f: Immutable.OrderedSet [
+      "277484f9-d839-4b44-9f43-0743e6db540f": Immutable.OrderedSet [
         "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
       ],
-      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
+      "320071be-4196-402b-98d7-d34bec8a1aab": Immutable.OrderedSet [
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       ],
     },
-    publisher_id: Immutable.Map {
-      122e0ec3-f072-4c5d-b40d-3eba4a82fe1e: Immutable.OrderedSet [
+    "publisher_id": Immutable.Map {
+      "122e0ec3-f072-4c5d-b40d-3eba4a82fe1e": Immutable.OrderedSet [
         "73173187-5965-451c-adbe-84e3e719abc0",
       ],
-      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.OrderedSet [
+      "4c9547ff-2ef6-439a-80b8-ea705a385b76": Immutable.OrderedSet [
         "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
@@ -57,42 +57,42 @@ Immutable.Map {
 
 exports[`mergeRecords edition one serie loose an edition compare to store 1`] = `
 Immutable.Map {
-  data: Immutable.Map {
-    908612fd-1cc7-4780-aea4-63d3ac04c6bd: Object {
+  "data": Immutable.Map {
+    "908612fd-1cc7-4780-aea4-63d3ac04c6bd": Immutable.Record {
       "id": "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
-      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
-      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
       "title": "Black Edition",
-    },
-    5482eba9-2773-40d8-82f7-1870b1b2a3e9: Object {
-      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
       "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
-      "title": "Edition simple",
     },
-    d42c9391-c92f-4485-a772-8df06d70ed17: Object {
+    "5482eba9-2773-40d8-82f7-1870b1b2a3e9": Immutable.Record {
+      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      "title": "Edition simple",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+    },
+    "d42c9391-c92f-4485-a772-8df06d70ed17": Immutable.Record {
       "id": "d42c9391-c92f-4485-a772-8df06d70ed17",
+      "title": "Edition reliée",
       "publisher_id": "2f064f84-a653-48c1-b1f6-27a694bb7ec6",
       "series_id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
-      "title": "Edition reliée",
     },
   },
-  relations: Immutable.Map {
-    publisher_id: Immutable.Map {
-      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.OrderedSet [
+  "relations": Immutable.Map {
+    "publisher_id": Immutable.Map {
+      "4c9547ff-2ef6-439a-80b8-ea705a385b76": Immutable.OrderedSet [
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       ],
-      2f064f84-a653-48c1-b1f6-27a694bb7ec6: Immutable.OrderedSet [
+      "2f064f84-a653-48c1-b1f6-27a694bb7ec6": Immutable.OrderedSet [
         "d42c9391-c92f-4485-a772-8df06d70ed17",
       ],
     },
-    series_id: Immutable.Map {
-      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
+    "series_id": Immutable.Map {
+      "320071be-4196-402b-98d7-d34bec8a1aab": Immutable.OrderedSet [
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       ],
-      b9652346-95db-45ef-982b-de9f9d3ac01f: Immutable.OrderedSet [
+      "b9652346-95db-45ef-982b-de9f9d3ac01f": Immutable.OrderedSet [
         "d42c9391-c92f-4485-a772-8df06d70ed17",
       ],
     },
@@ -102,52 +102,52 @@ Immutable.Map {
 
 exports[`mergeRecords edition one serie then author of the serie but an edition change publisher 1`] = `
 Immutable.Map {
-  data: Immutable.Map {
-    908612fd-1cc7-4780-aea4-63d3ac04c6bd: Object {
+  "data": Immutable.Map {
+    "908612fd-1cc7-4780-aea4-63d3ac04c6bd": Immutable.Record {
       "id": "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
+      "title": "Black Edition",
       "publisher_id": "122e0ec3-f072-4c5d-b40d-3eba4a82fe1e",
       "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
-      "title": "Black Edition",
     },
-    5482eba9-2773-40d8-82f7-1870b1b2a3e9: Object {
+    "5482eba9-2773-40d8-82f7-1870b1b2a3e9": Immutable.Record {
       "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      "title": "Edition simple",
       "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
       "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
-      "title": "Edition simple",
     },
-    73173187-5965-451c-adbe-84e3e719abc0: Object {
+    "73173187-5965-451c-adbe-84e3e719abc0": Immutable.Record {
       "id": "73173187-5965-451c-adbe-84e3e719abc0",
+      "title": "Edition simple",
       "publisher_id": "122e0ec3-f072-4c5d-b40d-3eba4a82fe1e",
       "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
-      "title": "Edition simple",
     },
-    8413f439-9bdd-42a2-bd40-4b0f6118dc8d: Object {
+    "8413f439-9bdd-42a2-bd40-4b0f6118dc8d": Immutable.Record {
       "id": "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
+      "title": "Edition simple",
       "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
       "series_id": "277484f9-d839-4b44-9f43-0743e6db540f",
-      "title": "Edition simple",
     },
   },
-  relations: Immutable.Map {
-    publisher_id: Immutable.Map {
-      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.OrderedSet [
+  "relations": Immutable.Map {
+    "publisher_id": Immutable.Map {
+      "4c9547ff-2ef6-439a-80b8-ea705a385b76": Immutable.OrderedSet [
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
         "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
       ],
-      122e0ec3-f072-4c5d-b40d-3eba4a82fe1e: Immutable.OrderedSet [
+      "122e0ec3-f072-4c5d-b40d-3eba4a82fe1e": Immutable.OrderedSet [
         "73173187-5965-451c-adbe-84e3e719abc0",
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
       ],
     },
-    series_id: Immutable.Map {
-      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
+    "series_id": Immutable.Map {
+      "320071be-4196-402b-98d7-d34bec8a1aab": Immutable.OrderedSet [
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       ],
-      fc34ad95-27cf-4cba-aafc-e9c37de532b4: Immutable.OrderedSet [
+      "fc34ad95-27cf-4cba-aafc-e9c37de532b4": Immutable.OrderedSet [
         "73173187-5965-451c-adbe-84e3e719abc0",
       ],
-      277484f9-d839-4b44-9f43-0743e6db540f: Immutable.OrderedSet [
+      "277484f9-d839-4b44-9f43-0743e6db540f": Immutable.OrderedSet [
         "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
       ],
     },
@@ -157,36 +157,35 @@ Immutable.Map {
 
 exports[`mergeRecords edition one serie then author of the serie but an edition is missing 1`] = `
 Immutable.Map {
-  data: Immutable.Map {
-    8413f439-9bdd-42a2-bd40-4b0f6118dc8d: Object {
+  "data": Immutable.Map {
+    "8413f439-9bdd-42a2-bd40-4b0f6118dc8d": Immutable.Record {
       "id": "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
+      "title": "Edition simple",
       "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
       "series_id": "277484f9-d839-4b44-9f43-0743e6db540f",
-      "title": "Edition simple",
     },
-    73173187-5965-451c-adbe-84e3e719abc0: Object {
+    "73173187-5965-451c-adbe-84e3e719abc0": Immutable.Record {
       "id": "73173187-5965-451c-adbe-84e3e719abc0",
+      "title": "Edition simple",
       "publisher_id": "122e0ec3-f072-4c5d-b40d-3eba4a82fe1e",
       "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
-      "title": "Edition simple",
     },
   },
-  relations: Immutable.Map {
-    publisher_id: Immutable.Map {
-      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.OrderedSet [
+  "relations": Immutable.Map {
+    "publisher_id": Immutable.Map {
+      "4c9547ff-2ef6-439a-80b8-ea705a385b76": Immutable.OrderedSet [
         "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
       ],
-      122e0ec3-f072-4c5d-b40d-3eba4a82fe1e: Immutable.OrderedSet [
+      "122e0ec3-f072-4c5d-b40d-3eba4a82fe1e": Immutable.OrderedSet [
         "73173187-5965-451c-adbe-84e3e719abc0",
       ],
     },
-    series_id: Immutable.Map {
-      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
-      ],
-      fc34ad95-27cf-4cba-aafc-e9c37de532b4: Immutable.OrderedSet [
+    "series_id": Immutable.Map {
+      "320071be-4196-402b-98d7-d34bec8a1aab": Immutable.OrderedSet [],
+      "fc34ad95-27cf-4cba-aafc-e9c37de532b4": Immutable.OrderedSet [
         "73173187-5965-451c-adbe-84e3e719abc0",
       ],
-      277484f9-d839-4b44-9f43-0743e6db540f: Immutable.OrderedSet [
+      "277484f9-d839-4b44-9f43-0743e6db540f": Immutable.OrderedSet [
         "8413f439-9bdd-42a2-bd40-4b0f6118dc8d",
       ],
     },
@@ -196,29 +195,29 @@ Immutable.Map {
 
 exports[`mergeRecords edition one serie with two editions on empty store 1`] = `
 Immutable.Map {
-  data: Immutable.Map {
-    908612fd-1cc7-4780-aea4-63d3ac04c6bd: Object {
+  "data": Immutable.Map {
+    "908612fd-1cc7-4780-aea4-63d3ac04c6bd": Immutable.Record {
       "id": "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
-      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
-      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
       "title": "Black Edition",
-    },
-    5482eba9-2773-40d8-82f7-1870b1b2a3e9: Object {
-      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
       "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+    },
+    "5482eba9-2773-40d8-82f7-1870b1b2a3e9": Immutable.Record {
+      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       "title": "Edition simple",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
     },
   },
-  relations: Immutable.Map {
-    publisher_id: Immutable.Map {
-      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.OrderedSet [
+  "relations": Immutable.Map {
+    "publisher_id": Immutable.Map {
+      "4c9547ff-2ef6-439a-80b8-ea705a385b76": Immutable.OrderedSet [
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       ],
     },
-    series_id: Immutable.Map {
-      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
+    "series_id": Immutable.Map {
+      "320071be-4196-402b-98d7-d34bec8a1aab": Immutable.OrderedSet [
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       ],
@@ -229,49 +228,49 @@ Immutable.Map {
 
 exports[`mergeRecords edition two series with two editions each on empty store 1`] = `
 Immutable.Map {
-  data: Immutable.Map {
-    908612fd-1cc7-4780-aea4-63d3ac04c6bd: Object {
+  "data": Immutable.Map {
+    "908612fd-1cc7-4780-aea4-63d3ac04c6bd": Immutable.Record {
       "id": "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
-      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
-      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
       "title": "Black Edition",
-    },
-    5482eba9-2773-40d8-82f7-1870b1b2a3e9: Object {
-      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
       "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
-      "title": "Edition simple",
     },
-    d42c9391-c92f-4485-a772-8df06d70ed17: Object {
+    "5482eba9-2773-40d8-82f7-1870b1b2a3e9": Immutable.Record {
+      "id": "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
+      "title": "Edition simple",
+      "publisher_id": "4c9547ff-2ef6-439a-80b8-ea705a385b76",
+      "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
+    },
+    "d42c9391-c92f-4485-a772-8df06d70ed17": Immutable.Record {
       "id": "d42c9391-c92f-4485-a772-8df06d70ed17",
-      "publisher_id": "2f064f84-a653-48c1-b1f6-27a694bb7ec6",
-      "series_id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
       "title": "Edition reliée",
-    },
-    ffdf56ae-058d-49c6-80c6-336471a73dcc: Object {
-      "id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
       "publisher_id": "2f064f84-a653-48c1-b1f6-27a694bb7ec6",
       "series_id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
+    },
+    "ffdf56ae-058d-49c6-80c6-336471a73dcc": Immutable.Record {
+      "id": "ffdf56ae-058d-49c6-80c6-336471a73dcc",
       "title": "Edition simple",
+      "publisher_id": "2f064f84-a653-48c1-b1f6-27a694bb7ec6",
+      "series_id": "b9652346-95db-45ef-982b-de9f9d3ac01f",
     },
   },
-  relations: Immutable.Map {
-    publisher_id: Immutable.Map {
-      4c9547ff-2ef6-439a-80b8-ea705a385b76: Immutable.OrderedSet [
+  "relations": Immutable.Map {
+    "publisher_id": Immutable.Map {
+      "4c9547ff-2ef6-439a-80b8-ea705a385b76": Immutable.OrderedSet [
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       ],
-      2f064f84-a653-48c1-b1f6-27a694bb7ec6: Immutable.OrderedSet [
+      "2f064f84-a653-48c1-b1f6-27a694bb7ec6": Immutable.OrderedSet [
         "d42c9391-c92f-4485-a772-8df06d70ed17",
         "ffdf56ae-058d-49c6-80c6-336471a73dcc",
       ],
     },
-    series_id: Immutable.Map {
-      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
+    "series_id": Immutable.Map {
+      "320071be-4196-402b-98d7-d34bec8a1aab": Immutable.OrderedSet [
         "908612fd-1cc7-4780-aea4-63d3ac04c6bd",
         "5482eba9-2773-40d8-82f7-1870b1b2a3e9",
       ],
-      b9652346-95db-45ef-982b-de9f9d3ac01f: Immutable.OrderedSet [
+      "b9652346-95db-45ef-982b-de9f9d3ac01f": Immutable.OrderedSet [
         "d42c9391-c92f-4485-a772-8df06d70ed17",
         "ffdf56ae-058d-49c6-80c6-336471a73dcc",
       ],

@@ -2,49 +2,49 @@
 
 exports[`mergeRecords tasks one author change task order 1`] = `
 Immutable.Map {
-  data: Immutable.Map {
-    0b6a3f23-ed97-46a6-b8bb-25ced41d9442: Object {
-      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+  "data": Immutable.Map {
+    "0b6a3f23-ed97-46a6-b8bb-25ced41d9442": Immutable.Record {
       "id": "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
+      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
       "job_id": "bf39f3fe-ce75-48b0-b557-877da935633b",
       "series_id": "277484f9-d839-4b44-9f43-0743e6db540f",
     },
-    5195c5d1-9d3e-4a6c-9b29-077fc217d224: Object {
-      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+    "5195c5d1-9d3e-4a6c-9b29-077fc217d224": Immutable.Record {
       "id": "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
+      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
       "job_id": "bf39f3fe-ce75-48b0-b557-877da935633b",
       "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
     },
-    63698905-4149-434a-abfd-59e2343c1c07: Object {
-      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+    "63698905-4149-434a-abfd-59e2343c1c07": Immutable.Record {
       "id": "63698905-4149-434a-abfd-59e2343c1c07",
+      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
       "job_id": "bf39f3fe-ce75-48b0-b557-877da935633b",
       "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
     },
   },
-  relations: Immutable.Map {
-    author_id: Immutable.Map {
-      17491b54-580f-4d5f-94e5-9b9e501871c4: Immutable.OrderedSet [
+  "relations": Immutable.Map {
+    "author_id": Immutable.Map {
+      "17491b54-580f-4d5f-94e5-9b9e501871c4": Immutable.OrderedSet [
         "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
         "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
         "63698905-4149-434a-abfd-59e2343c1c07",
       ],
     },
-    job_id: Immutable.Map {
-      bf39f3fe-ce75-48b0-b557-877da935633b: Immutable.OrderedSet [
+    "job_id": Immutable.Map {
+      "bf39f3fe-ce75-48b0-b557-877da935633b": Immutable.OrderedSet [
         "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
         "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
         "63698905-4149-434a-abfd-59e2343c1c07",
       ],
     },
-    series_id: Immutable.Map {
-      277484f9-d839-4b44-9f43-0743e6db540f: Immutable.OrderedSet [
+    "series_id": Immutable.Map {
+      "277484f9-d839-4b44-9f43-0743e6db540f": Immutable.OrderedSet [
         "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
       ],
-      fc34ad95-27cf-4cba-aafc-e9c37de532b4: Immutable.OrderedSet [
+      "fc34ad95-27cf-4cba-aafc-e9c37de532b4": Immutable.OrderedSet [
         "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
       ],
-      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
+      "320071be-4196-402b-98d7-d34bec8a1aab": Immutable.OrderedSet [
         "63698905-4149-434a-abfd-59e2343c1c07",
       ],
     },
@@ -54,62 +54,62 @@ Immutable.Map {
 
 exports[`mergeRecords tasks one author then serie with empty store 1`] = `
 Immutable.Map {
-  data: Immutable.Map {
-    5195c5d1-9d3e-4a6c-9b29-077fc217d224: Object {
-      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+  "data": Immutable.Map {
+    "5195c5d1-9d3e-4a6c-9b29-077fc217d224": Immutable.Record {
       "id": "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
+      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
       "job_id": "bf39f3fe-ce75-48b0-b557-877da935633b",
       "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
     },
-    0b6a3f23-ed97-46a6-b8bb-25ced41d9442: Object {
-      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+    "0b6a3f23-ed97-46a6-b8bb-25ced41d9442": Immutable.Record {
       "id": "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
+      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
       "job_id": "bf39f3fe-ce75-48b0-b557-877da935633b",
       "series_id": "277484f9-d839-4b44-9f43-0743e6db540f",
     },
-    63698905-4149-434a-abfd-59e2343c1c07: Object {
-      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+    "63698905-4149-434a-abfd-59e2343c1c07": Immutable.Record {
       "id": "63698905-4149-434a-abfd-59e2343c1c07",
+      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
       "job_id": "bf39f3fe-ce75-48b0-b557-877da935633b",
       "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
     },
-    4b1d117d-063b-4a08-b6d7-2f3d252b2a81: Object {
-      "author_id": "f06df71d-7bb3-4a4c-aec0-638f53aa43a8",
+    "4b1d117d-063b-4a08-b6d7-2f3d252b2a81": Immutable.Record {
       "id": "4b1d117d-063b-4a08-b6d7-2f3d252b2a81",
+      "author_id": "f06df71d-7bb3-4a4c-aec0-638f53aa43a8",
       "job_id": "37fb2477-ec0d-4ffc-9d3b-4189c2d01629",
       "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
     },
   },
-  relations: Immutable.Map {
-    author_id: Immutable.Map {
-      17491b54-580f-4d5f-94e5-9b9e501871c4: Immutable.OrderedSet [
+  "relations": Immutable.Map {
+    "author_id": Immutable.Map {
+      "17491b54-580f-4d5f-94e5-9b9e501871c4": Immutable.OrderedSet [
         "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
         "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
         "63698905-4149-434a-abfd-59e2343c1c07",
       ],
-      f06df71d-7bb3-4a4c-aec0-638f53aa43a8: Immutable.OrderedSet [
+      "f06df71d-7bb3-4a4c-aec0-638f53aa43a8": Immutable.OrderedSet [
         "4b1d117d-063b-4a08-b6d7-2f3d252b2a81",
       ],
     },
-    job_id: Immutable.Map {
-      bf39f3fe-ce75-48b0-b557-877da935633b: Immutable.OrderedSet [
+    "job_id": Immutable.Map {
+      "bf39f3fe-ce75-48b0-b557-877da935633b": Immutable.OrderedSet [
         "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
         "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
         "63698905-4149-434a-abfd-59e2343c1c07",
       ],
-      37fb2477-ec0d-4ffc-9d3b-4189c2d01629: Immutable.OrderedSet [
+      "37fb2477-ec0d-4ffc-9d3b-4189c2d01629": Immutable.OrderedSet [
         "4b1d117d-063b-4a08-b6d7-2f3d252b2a81",
       ],
     },
-    series_id: Immutable.Map {
-      fc34ad95-27cf-4cba-aafc-e9c37de532b4: Immutable.OrderedSet [
+    "series_id": Immutable.Map {
+      "fc34ad95-27cf-4cba-aafc-e9c37de532b4": Immutable.OrderedSet [
         "4b1d117d-063b-4a08-b6d7-2f3d252b2a81",
         "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
       ],
-      277484f9-d839-4b44-9f43-0743e6db540f: Immutable.OrderedSet [
+      "277484f9-d839-4b44-9f43-0743e6db540f": Immutable.OrderedSet [
         "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
       ],
-      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
+      "320071be-4196-402b-98d7-d34bec8a1aab": Immutable.OrderedSet [
         "63698905-4149-434a-abfd-59e2343c1c07",
       ],
     },
@@ -119,49 +119,49 @@ Immutable.Map {
 
 exports[`mergeRecords tasks one author with empty store 1`] = `
 Immutable.Map {
-  data: Immutable.Map {
-    5195c5d1-9d3e-4a6c-9b29-077fc217d224: Object {
-      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+  "data": Immutable.Map {
+    "5195c5d1-9d3e-4a6c-9b29-077fc217d224": Immutable.Record {
       "id": "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
+      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
       "job_id": "bf39f3fe-ce75-48b0-b557-877da935633b",
       "series_id": "fc34ad95-27cf-4cba-aafc-e9c37de532b4",
     },
-    0b6a3f23-ed97-46a6-b8bb-25ced41d9442: Object {
-      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+    "0b6a3f23-ed97-46a6-b8bb-25ced41d9442": Immutable.Record {
       "id": "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
+      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
       "job_id": "bf39f3fe-ce75-48b0-b557-877da935633b",
       "series_id": "277484f9-d839-4b44-9f43-0743e6db540f",
     },
-    63698905-4149-434a-abfd-59e2343c1c07: Object {
-      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
+    "63698905-4149-434a-abfd-59e2343c1c07": Immutable.Record {
       "id": "63698905-4149-434a-abfd-59e2343c1c07",
+      "author_id": "17491b54-580f-4d5f-94e5-9b9e501871c4",
       "job_id": "bf39f3fe-ce75-48b0-b557-877da935633b",
       "series_id": "320071be-4196-402b-98d7-d34bec8a1aab",
     },
   },
-  relations: Immutable.Map {
-    author_id: Immutable.Map {
-      17491b54-580f-4d5f-94e5-9b9e501871c4: Immutable.OrderedSet [
+  "relations": Immutable.Map {
+    "author_id": Immutable.Map {
+      "17491b54-580f-4d5f-94e5-9b9e501871c4": Immutable.OrderedSet [
         "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
         "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
         "63698905-4149-434a-abfd-59e2343c1c07",
       ],
     },
-    job_id: Immutable.Map {
-      bf39f3fe-ce75-48b0-b557-877da935633b: Immutable.OrderedSet [
+    "job_id": Immutable.Map {
+      "bf39f3fe-ce75-48b0-b557-877da935633b": Immutable.OrderedSet [
         "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
         "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
         "63698905-4149-434a-abfd-59e2343c1c07",
       ],
     },
-    series_id: Immutable.Map {
-      fc34ad95-27cf-4cba-aafc-e9c37de532b4: Immutable.OrderedSet [
+    "series_id": Immutable.Map {
+      "fc34ad95-27cf-4cba-aafc-e9c37de532b4": Immutable.OrderedSet [
         "5195c5d1-9d3e-4a6c-9b29-077fc217d224",
       ],
-      277484f9-d839-4b44-9f43-0743e6db540f: Immutable.OrderedSet [
+      "277484f9-d839-4b44-9f43-0743e6db540f": Immutable.OrderedSet [
         "0b6a3f23-ed97-46a6-b8bb-25ced41d9442",
       ],
-      320071be-4196-402b-98d7-d34bec8a1aab: Immutable.OrderedSet [
+      "320071be-4196-402b-98d7-d34bec8a1aab": Immutable.OrderedSet [
         "63698905-4149-434a-abfd-59e2343c1c07",
       ],
     },
